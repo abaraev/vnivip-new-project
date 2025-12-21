@@ -10,7 +10,7 @@
     "build": "nest build",
     "start": "nest start",
     "start:dev": "dotenv -e .development.env -- nest start --watch",
-    "start:prod": "dotenv -e .production.env -- node dist/main",
+    "start:prod": "dotenv -e .production.env -- nest start --watch",
     "start:prod:pm2": "pm2 start ecosystem.config.js",
     "start:debug": "nest start --debug --watch",
     "migrate:dev": "npx sequelize-cli db:migrate --url postgres://postgres:root@localhost/vnivip",
