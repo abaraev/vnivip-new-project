@@ -80,9 +80,6 @@ import {HandlebarsAdapter} from "@nestjs-modules/mailer/dist/adapters/handlebars
                     host: process.env.SMTP_HOST,
                     port: +process.env.SMTP_PORT,
                     secure: true,
-                    tls: {
-                        rejectUnauthorized: false,
-                    },
                     auth: {
                         user: process.env.EMAIL_USERNAME,
                         pass: process.env.EMAIL_PASSWORD,
