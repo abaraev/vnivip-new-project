@@ -1,0 +1,56 @@
+.OrderTabsDesktop {
+    display: flex;
+    gap: 20px;
+}
+
+.tab1,
+.tabSelected1,
+.tab2,
+.tabSelected2,
+.tab3,
+.tabSelected3 {
+    height: 35px;
+    width: 150px;
+    font: var(--font-body-s-desktop);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tab1 {
+    background: var(--white);
+    border: 2px solid var(--orange);
+    cursor: pointer;
+}
+
+.tabSelected1 {
+    background: var(--orange);
+    border: 2px solid var(--orange);
+    color: var(--white);
+}
+
+.tab2 {
+    background: var(--white);
+    border: 2px solid var(--red);
+    cursor: pointer;
+}
+
+.tabSelected2 {
+    background: var(--red);
+    border: 2px solid var(--red);
+    color: var(--white);
+}
+
+.tab3 {
+    background: var(--white);
+    border: 2px solid var(--green);
+    cursor: pointer;
+}
+
+.tabSelected3 {
+    background: var(--green);
+    border: 2px solid var(--green);
+    color: var(--white);
+}

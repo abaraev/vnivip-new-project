@@ -1,0 +1,35 @@
+.MainPageNewsMobile {
+    scroll-margin-top: var(--header-mobile-height);
+}
+
+
+.titleWrapper {
+    padding-bottom: 80px;
+    padding-top: 50px;
+    border-bottom: 1px solid var(--grey4);
+}
+
+.titleText {
+    letter-spacing: 15px;
+    position: relative;
+    z-index: 1;
+    direction: rtl;
+    text-indent: -15px;
+}
+
+.title {
+    position: relative;
+}
+
+.spinner {
+    top: -2.5em;
+    left: -0.7%;
+}
+
+.newsWrapper {
+    width: 95%;
+}
+
+.arrowWrapper {
+    width: calc((100% - 10px) / 2);
+}

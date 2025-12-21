@@ -1,0 +1,19 @@
+.MemberMobile {
+    background: var(--white4);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image {
+    height: 100% !important;
+    width: 100% !important;
+    box-shadow: 0 0 2px 0 var(--black);
+}
+
+.imageWrapper {
+    height: 40vh;
+    width: 60%;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--grey-light2);
+}

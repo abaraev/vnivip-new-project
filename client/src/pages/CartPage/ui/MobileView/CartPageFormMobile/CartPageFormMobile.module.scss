@@ -1,0 +1,31 @@
+.CartPageFormMobile {
+
+}
+
+.textArea {
+    min-height: 100px !important;
+}
+
+.document {
+    width: 90% !important;
+}
+
+.input {
+    width: 100%;
+}
+
+.totalCard {
+    background: var(--blue3);
+    border-radius: 5px;
+    height: 35vh;
+}
+
+.totalPriceWrapper {
+    background: var(--white2);
+    width: 93%;
+    height: 60%;
+}
+
+.totalPrice::after {
+    content: ' \20BD';
+}

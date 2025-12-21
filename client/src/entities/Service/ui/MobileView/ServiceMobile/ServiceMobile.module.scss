@@ -1,0 +1,125 @@
+.ServiceMobile {
+    background: var(--grey-light2);
+    width: 100%;
+    height: 60vh;
+    min-height: 370px;
+    border-radius: 5px;
+}
+
+.price {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.price::after {
+    content: ' \20BD';
+}
+
+.name {
+    width: 100%;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.img {
+    width: 100% !important;
+    border-radius: 5px;
+    height: 32vh !important;
+}
+
+
+.cartBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: end;
+    background: var(--blue2);
+    position: relative;
+    padding: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+        gap: 20px;
+        padding-left: 110px;
+        padding-right: 20px;
+        .cartText {
+            left: 20px;
+            width: auto;
+            overflow: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.cartText {
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    interpolate-size: allow-keywords;
+    transition: all 0.5s ease;
+    left: 10px;
+    opacity: 0;
+}
+
+.cartBtnAdded {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px;
+    border-radius: 50px;
+    animation: blink 1s ease;
+    opacity: 1;
+    background: var(--black2);
+    interpolate-size: allow-keywords;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.cartAddedWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cartAddedCounter {
+    display: flex;
+    gap: 5px;
+}
+
+.textAdded {
+    display: flex;
+    align-items: center;
+}
+
+.btnMinus,
+.btnPlus {
+    padding: 10px;
+}
+
+.btnMinusOpacity {
+    padding: 10px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.3;
+        width: 154px;
+    }
+    to {
+        opacity: 1;
+        width: auto;
+    }
+}

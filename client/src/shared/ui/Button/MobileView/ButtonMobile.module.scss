@@ -1,0 +1,119 @@
+.ButtonMobile {
+    font: var(--font-button-mobile);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.white {
+    color: var(--white4);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.primary {
+    color: var(--white4);
+    background: var(--blue2);
+    border-radius: 20px;
+    padding-inline: 10px;
+    padding-block: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    border: 1px solid var(--blue2);
+    .text {
+        z-index: 1;
+        transition: all 0.4s ease-in;
+    }
+    .animBg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 101%;
+        background: var(--white4);
+        border-radius: 20px;
+        transition: all 0.4s ease-in;
+    }
+    .arrow {
+        fill: var(--white4);
+        z-index: 1;
+        transition: all 0.4s ease-in;
+    }
+    &:hover {
+        .animBg {
+            right: 0;
+        }
+        .text {
+            color: var(--blue2);
+        }
+        border: 1px solid var(--blue2);
+        .arrow {
+            fill: var(--blue2);
+        }
+    }
+}
+
+
+.outline {
+    color: var(--blue2);
+    background: var(--white4);
+    border-radius: 20px;
+    padding-inline: 10px;
+    padding-block: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    border: 1px solid var(--blue2);
+    .text {
+        z-index: 1;
+        transition: all 0.3s ease-in;
+    }
+    .animBg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 101%;
+        background: var(--blue2);
+        border-radius: 20px;
+        transition: all 0.3s ease-in;
+    }
+    .arrow {
+        fill: var(--blue2);
+        z-index: 1;
+        transition: all 0.3s ease-in;
+    }
+    &:hover {
+        .animBg {
+            right: 0;
+        }
+        .text {
+            color: var(--white4);
+        }
+        border: 1px solid var(--white2);
+        .arrow {
+            fill: var(--white4);
+        }
+    }
+}
+
+.outline_red {
+    color: var(--red);
+    background: var(--white4);
+    border-radius: 20px;
+    padding-inline: 10px;
+    padding-block: 5px;
+    border: 1px solid var(--red);
+    &:hover {
+        background: var(--red2);
+    }
+}

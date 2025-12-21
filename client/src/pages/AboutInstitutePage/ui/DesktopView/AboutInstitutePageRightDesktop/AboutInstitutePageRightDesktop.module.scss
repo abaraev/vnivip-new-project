@@ -1,0 +1,53 @@
+.AboutInstitutePageRightDesktop {
+    width: 33%;
+    background: var(--grey-light);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+}
+
+.directorImage {
+    height: 355px !important;
+    width: 230px !important;
+}
+
+.topImages {
+    height: 45%;
+}
+
+
+
+.img {
+    width: 400px !important;
+    height: 250px !important;
+}
+
+
+@media (max-width: 1300px) {
+    .directorImage {
+        height: 290px !important;
+        width: 180px !important;
+    }
+}
+
+@media (max-width: 1150px) {
+    .directorImage {
+        height: 250px !important;
+        width: 140px !important;
+    }
+}
+
+@media (max-width: 1260px) {
+    .img {
+        width: 330px !important;
+        height: 210px !important;
+    }
+}
+
+@media (max-width: 1050px) {
+    .img {
+        width: 260px !important;
+        height: 180px !important;
+    }
+}

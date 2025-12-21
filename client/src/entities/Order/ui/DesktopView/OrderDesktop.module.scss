@@ -1,0 +1,23 @@
+.OrderDesktop {
+    width: calc((100% - 30px) / 2);
+    background: var(--grey-light);
+    border: 1px solid var(--black);
+}
+
+.statusTextOrange {
+    padding: 5px;
+    background: var(--orange);
+    border-radius: 10px;
+}
+
+.statusTextGreen {
+    padding: 5px;
+    background: var(--green);
+    border-radius: 10px;
+}
+
+.statusTextRed {
+    padding: 5px;
+    background: var(--red);
+    border-radius: 10px;
+}

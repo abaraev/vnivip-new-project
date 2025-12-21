@@ -1,0 +1,241 @@
+:root {
+    --font-family-main: "Montserrat", "Times New Roman", sans-serif;
+
+    // -------------------------------- DESKTOP FONTS -------------------------------------------------
+
+    // LARGE
+    --font-size-large-desktop: 80px;
+    --font-line-large-desktop: 72px;
+    --font-large-desktop: 600 var(--font-size-large-desktop) / var(--font-line-large-desktop) var(--font-family-main);
+
+    // H1
+    --font-size-h1-desktop: 60px;
+    --font-line-h1-desktop: 66px;
+    --font-h1-desktop: 600 var(--font-size-h1-desktop) / var(--font-line-h1-desktop) var(--font-family-main);
+
+    // H1-LIGHT
+    --font-size-h1-light-desktop: 60px;
+    --font-line-h1-light-desktop: 66px;
+    --font-h1-light-desktop: 400 var(--font-size-h1-light-desktop) / var(--font-line-h1-light-desktop) var(--font-family-main);
+
+    // H2
+    --font-size-h2-desktop: 44px;
+    --font-line-h2-desktop: 48.4px;
+    --font-h2-desktop: 500 var(--font-size-h2-desktop) / var(--font-line-h2-desktop) var(--font-family-main);
+
+    // H2-MEDIUM
+    --font-size-h2-medium-desktop: 44px;
+    --font-line-h2-medium-desktop: 48.4px;
+    --font-h2-medium-desktop: 600 var(--font-size-h2-medium-desktop) / var(--font-line-h2-medium-desktop) var(--font-family-main);
+
+    // H2-LIGHT
+    --font-size-h2-light-desktop: 44px;
+    --font-line-h2-light-desktop: 48.4px;
+    --font-h2-light-desktop: 450 italic var(--font-size-h2-light-desktop) / var(--font-line-h2-light-desktop) var(--font-family-main);
+
+    // H3
+    --font-size-h3-desktop: 40px;
+    --font-line-h3-desktop: 44px;
+    --font-h3-desktop: 500 var(--font-size-h3-desktop) / var(--font-line-h3-desktop) var(--font-family-main);
+
+    // H3-LIGHT
+    --font-size-h3-light-desktop: 40px;
+    --font-line-h3-light-desktop: 44px;
+    --font-h3-light-desktop: 450 italic var(--font-size-h3-light-desktop) / var(--font-line-h3-light-desktop) var(--font-family-main);
+
+
+    // H4
+    --font-size-h4-desktop: 29px;
+    --font-line-h4-desktop: 31.9px;
+    --font-h4-desktop: 500 var(--font-size-h4-desktop) / var(--font-line-h4-desktop) var(--font-family-main);
+
+    // H4-MEDIUM
+    --font-size-h4-medium-desktop: 29px;
+    --font-line-h4-medium-desktop: 31.9px;
+    --font-h4-medium-desktop: 600 var(--font-size-h4-medium-desktop) / var(--font-line-h4-medium-desktop) var(--font-family-main);
+
+    // H4-ITALIC
+    --font-size-h4-italic-desktop: 29px;
+    --font-line-h4-italic-desktop: 31.9px;
+    --font-h4-italic-desktop: 400 italic var(--font-size-h4-italic-desktop) / var(--font-line-h4-italic-desktop) var(--font-family-main);
+
+    // BodyL
+    --font-size-body-l-desktop: 22px;
+    --font-line-body-l-desktop: 24.2px;
+    --font-body-l-desktop: 500 var(--font-size-body-l-desktop) / var(--font-line-body-l-desktop) var(--font-family-main);
+
+    // BodyL-MEDIUM
+    --font-size-body-l-medium-desktop: 22px;
+    --font-line-body-l-medium-desktop: 24.2px;
+    --font-body-l-medium-desktop: 550 var(--font-size-body-l-medium-desktop) / var(--font-line-body-l-medium-desktop) var(--font-family-main);
+
+    // BodyL-LIGHT
+    --font-size-body-l-light-desktop: 22px;
+    --font-line-body-l-light-desktop: 24.2px;
+    --font-body-l-light-desktop: 450 var(--font-size-body-l-light-desktop) / var(--font-line-body-l-light-desktop) var(--font-family-main);
+
+    // Body-LIGHT-ITALIC
+    --font-size-body-light-italic-desktop: 19px;
+    --font-line-body-light-italic-desktop: 20.9px;
+    --font-body-light-italic-desktop: 450 italic var(--font-size-body-light-italic-desktop) / var(--font-line-body-light-italic-desktop) var(--font-family-main);
+
+    // Body
+    --font-size-body-desktop: 19px;
+    --font-line-body-desktop: 20.9px;
+    --font-body-desktop: 500 var(--font-size-body-desktop) / var(--font-line-body-desktop) var(--font-family-main);
+
+    // Body-LIGHT
+    --font-size-body-light-desktop: 19px;
+    --font-line-body-light-desktop: 20.9px;
+    --font-body-light-desktop: 450 var(--font-size-body-light-desktop) / var(--font-line-body-light-desktop) var(--font-family-main);
+
+    // Body-MEDIUM
+    --font-size-body-medium-desktop: 19px;
+    --font-line-body-medium-desktop: 20.9px;
+    --font-body-medium-desktop: 600 var(--font-size-body-medium-desktop) / var(--font-line-body-medium-desktop) var(--font-family-main);
+
+    // BodyS
+    --font-size-body-s-desktop: 17px;
+    --font-line-body-s-desktop: 18.7px;
+    --font-body-s-desktop: 500 var(--font-size-body-s-desktop) / var(--font-line-body-s-desktop) var(--font-family-main);
+
+    // BodyS-LIGHT-ITALIC
+    --font-size-body-s-light-italic-desktop: 17px;
+    --font-line-body-s-light-italic-desktop: 18.7px;
+    --font-body-s-light-italic-desktop: 450 italic var(--font-size-body-s-light-italic-desktop) / var(--font-line-body-s-light-italic-desktop) var(--font-family-main);
+
+    // BodyS-MEDIUM
+    --font-size-body-s-medium-desktop: 17px;
+    --font-line-body-s-medium-desktop: 18.7px;
+    --font-body-s-medium-desktop: 600 var(--font-size-body-s-medium-desktop) / var(--font-line-body-s-medium-desktop) var(--font-family-main);
+
+    // Body-MINI
+    --font-size-body-mini-desktop: 14px;
+    --font-line-body-mini-desktop: 15.4px;
+    --font-body-mini-desktop: 500 var(--font-size-body-mini-desktop) / var(--font-line-body-mini-desktop) var(--font-family-main);
+
+    // Body-MINI-MEDIUM
+    --font-size-body-mini-medium-desktop: 14px;
+    --font-line-body-mini-medium-desktop: 15.4px;
+    --font-body-mini-medium-desktop: 550 var(--font-size-body-mini-medium-desktop) / var(--font-line-body-mini-medium-desktop) var(--font-family-main);
+
+    // BUTTON
+    --font-size-button-desktop: 18px;
+    --font-line-button-desktop: 19.8px;
+    --font-button-desktop: 500 var(--font-size-button-desktop) / var(--font-line-button-desktop) var(--font-family-main);
+
+    // MENU
+    --font-size-menu-desktop: 17px;
+    --font-line-menu-desktop: 18.7px;
+    --font-menu-desktop: 500 var(--font-size-menu-desktop) / var(--font-line-menu-desktop) var(--font-family-main);
+
+    // -------------------------------- MOBILE FONTS -------------------------------------------------
+
+    // LARGE
+    --font-size-large-mobile: 38px;
+    --font-line-large-mobile: 41.8px;
+    --font-large-mobile: 600 var(--font-size-large-mobile) / var(--font-line-large-mobile) var(--font-family-main);
+
+    // H1
+    --font-size-h1-mobile: 28px;
+    --font-line-h1-mobile: 30.8px;
+    --font-h1-mobile: 600 var(--font-size-h1-mobile) / var(--font-line-h1-mobile) var(--font-family-main);
+
+    // H1-MINI
+    --font-size-h1-mini-mobile: 26px;
+    --font-line-h1-mini-mobile: 28.6px;
+    --font-h1-mini-mobile: 600 var(--font-size-h1-mini-mobile) / var(--font-line-h1-mini-mobile) var(--font-family-main);
+
+    // H1-MINI-ITALIC
+    --font-size-h1-mini-italic-mobile: 26px;
+    --font-line-h1-mini-italic-mobile: 28.6px;
+    --font-h1-mini-italic-mobile: 400 italic var(--font-size-h1-mini-italic-mobile) / var(--font-line-h1-mini-italic-mobile) var(--font-family-main);
+
+    // H2
+    --font-size-h2-mobile: 27px;
+    --font-line-h2-mobile: 29.7px;
+    --font-h2-mobile: 500 var(--font-size-h2-mobile) / var(--font-line-h2-mobile) var(--font-family-main);
+
+    // H2-MEDIUM
+    --font-size-h2-medium-mobile: 27px;
+    --font-line-h2-medium-mobile: 29.7px;
+    --font-h2-medium-mobile: 600 var(--font-size-h2-medium-mobile) / var(--font-line-h2-medium-mobile) var(--font-family-main);
+
+    // H2-ITALIC
+    --font-size-h2-italic-mobile: 27px;
+    --font-line-h2-italic-mobile: 29.7px;
+    --font-h2-italic-mobile: 400 italic var(--font-size-h2-italic-mobile) / var(--font-line-h2-italic-mobile) var(--font-family-main);
+
+    // H3
+    --font-size-h3-mobile: 22px;
+    --font-line-h3-mobile: 24.2px;
+    --font-h3-mobile: 500 var(--font-size-h3-mobile) / var(--font-line-h3-mobile) var(--font-family-main);
+
+    // H3-MEDIUM
+    --font-size-h3-medium-mobile: 20px;
+    --font-line-h3-medium-mobile: 22px;
+    --font-h3-medium-mobile: 600 var(--font-size-h3-medium-mobile) / var(--font-line-h3-medium-mobile) var(--font-family-main);
+
+    // BodyL
+    --font-size-body-l-mobile: 19px;
+    --font-line-body-l-mobile: 20.9px;
+    --font-body-l-mobile: 500 var(--font-size-body-l-mobile) / var(--font-line-body-l-mobile) var(--font-family-main);
+
+    // BodyL-LIGHT
+    --font-size-body-l-light-mobile: 19px;
+    --font-line-body-l-light-mobile: 20.9px;
+    --font-body-l-light-mobile: 450 var(--font-size-body-l-light-mobile) / var(--font-line-body-l-light-mobile) var(--font-family-main);
+
+    // BodyL-MEDIUM
+    --font-size-body-l-medium-mobile: 19px;
+    --font-line-body-l-medium-mobile: 20.9px;
+    --font-body-l-medium-mobile: 600 var(--font-size-body-l-medium-mobile) / var(--font-line-body-l-medium-mobile) var(--font-family-main);
+
+    // Body
+    --font-size-body-mobile: 16px;
+    --font-line-body-mobile: 17.6px;
+    --font-body-mobile: 500 var(--font-size-body-mobile) / var(--font-line-body-mobile) var(--font-family-main);
+
+    // Body-LIGHT-ITALIC
+    --font-size-body-light-italic-mobile: 16px;
+    --font-line-body-light-italic-mobile: 17.6px;
+    --font-body-light-italic-mobile: 450 italic var(--font-size-body-light-italic-mobile) / var(--font-line-body-light-italic-mobile) var(--font-family-main);
+
+    // Body-MEDIUM
+    --font-size-body-medium-mobile: 16px;
+    --font-line-body-medium-mobile: 17.6px;
+    --font-body-medium-mobile: 600 var(--font-size-body-medium-mobile) / var(--font-line-body-medium-mobile) var(--font-family-main);
+
+    // BodyS
+    --font-size-body-s-mobile: 14px;
+    --font-line-body-s-mobile: 15.4px;
+    --font-body-s-mobile: 500 var(--font-size-body-s-mobile) / var(--font-line-body-s-mobile) var(--font-family-main);
+
+    // BodyS-MEDIUM
+    --font-size-body-s-medium-mobile: 14px;
+    --font-line-body-s-medium-mobile: 15.4px;
+    --font-body-s-medium-mobile: 600 var(--font-size-body-s-medium-mobile) / var(--font-line-body-s-medium-mobile) var(--font-family-main);
+
+    // Body-MINI
+    --font-size-body-mini-mobile: 11px;
+    --font-line-body-mini-mobile: 12.1px;
+    --font-body-mini-mobile: 500 var(--font-size-body-mini-mobile) / var(--font-line-body-mini-mobile) var(--font-family-main);
+
+    // BUTTON
+    --font-size-button-mobile: 16px;
+    --font-line-button-mobile: 17.6px;
+    --font-button-mobile: 500 var(--font-size-button-mobile) / var(--font-line-button-mobile) var(--font-family-main);
+
+    // -------------------------------- OTHERS -------------------------------------------------
+
+    // Размеры
+    --header-desktop-height: 115px;
+    --header-mobile-height: 70px;
+
+    // z - Индексы
+    --dropdown-z-index: 20;
+    --burger-menu-z-index: 15;
+    --modal-z-index: 25;
+    --header-mobile-z-index: 10;
+    --header-desktop-z-index: 10;
+}

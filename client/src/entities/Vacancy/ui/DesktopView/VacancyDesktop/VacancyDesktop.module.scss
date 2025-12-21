@@ -1,0 +1,39 @@
+.VacancyDesktop {
+    background: var(--grey-light2);
+    width: 80%;
+    border-radius: 10px;
+}
+
+.contentWrapper {
+    cursor: pointer;
+    background: var(--blue-light);
+    border-radius: 10px;
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.arrowIsOpen {
+    transform: rotateX(180deg);
+}
+
+.description {
+    white-space: pre-wrap;
+    padding-inline: 40px;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    interpolate-size: allow-keywords;
+}
+
+.descriptionVisible {
+    .description {
+        padding-block: 20px;
+        height: auto;
+    }
+
+    .contentWrapper {
+        box-shadow: 0 1px 4px -1px var(--black-opacity);
+    }
+}

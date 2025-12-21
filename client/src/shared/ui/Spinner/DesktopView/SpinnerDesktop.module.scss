@@ -1,0 +1,110 @@
+.SpinnerDesktop {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+    border-radius: 50%;
+    border: 1px solid var(--grey4);
+    position: absolute;
+}
+
+.circle1 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: Rotation 11s linear infinite;
+}
+
+.circle2 {
+    top: 16%;
+    left: 16%;
+    bottom: 16%;
+    right: 16%;
+    animation: Rotation 10.5s linear infinite;
+}
+
+.circle3 {
+    top: 33%;
+    left: 33%;
+    bottom: 33%;
+    right: 33%;
+    animation: Rotation 10s linear infinite;
+}
+
+.ball11,
+.ball12,
+.ball13,
+.ball21,
+.ball22,
+.ball31 {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.ball11,
+.ball13,
+.ball21 {
+    background: var(--blue);
+}
+
+.ball12,
+.ball22,
+.ball31 {
+    background: var(--blue3);
+}
+
+.ball11 {
+    left: -19px;
+    bottom: 143px;
+    width: 35px;
+    height: 35px;
+}
+
+.ball12 {
+    top: 13px;
+    left: 223px;
+    width: 35px;
+    height: 35px;
+}
+
+.ball13 {
+    bottom: 32px;
+    right: 21px;
+    width: 30px;
+    height: 30px;
+}
+
+.ball21 {
+    top: -6px;
+    left: 39px;
+    width: 35px;
+    height: 35px;
+}
+
+.ball22 {
+    bottom: -11px;
+    left: 49px;
+    width: 30px;
+    height: 30px;
+}
+
+.ball31 {
+    right: -14px;
+    top: 23px;
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes Rotation {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}

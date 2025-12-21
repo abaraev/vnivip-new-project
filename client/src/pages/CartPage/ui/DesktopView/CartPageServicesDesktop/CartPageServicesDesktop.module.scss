@@ -1,0 +1,68 @@
+.CartPageServicesDesktop {
+    background: var(--blue-light2);
+    width: 53%;
+    height: 75vh;
+    border-radius: 5px;
+}
+
+.service {
+    width: calc((100% - 20px) / 2)  !important;
+    box-shadow: 0 0 2px -1px black;
+}
+
+.emptyText {
+    flex-grow: 1;
+}
+
+.servicesList {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1100px) {
+    .CartPageServicesDesktop {
+        height: 110vh;
+    }
+}
+
+@media (max-height: 530px) {
+    .CartPageServicesDesktop {
+        height: 120vh;
+    }
+}
+
+@media (max-width: 1500px) and (min-width: 1400px) {
+    .service {
+        width: 100% !important;
+        margin-inline: 130px !important;
+    }
+}
+
+@media (max-width: 1400px) and (min-width: 1300px) {
+    .service {
+        width: 100% !important;
+        margin-inline: 100px !important;
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1200px) {
+    .service {
+        width: 100% !important;
+        margin-inline: 80px !important;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1100px) {
+    .service {
+        width: 100% !important;
+        margin-inline: 60px !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .service {
+        width: 100% !important;
+        height: 85vh !important;
+    }
+}
+

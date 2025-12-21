@@ -1,0 +1,22 @@
+export enum CartPageValidateErrorTypes {
+    // имя
+    EMPTY_NAME_ERROR = 'EMPTY_NAME_ERROR',
+    FORMAT_NAME_ERROR = 'FORMAT_NAME_ERROR',
+
+    // фамилия
+    FORMAT_SECOND_NAME_ERROR = 'FORMAT_SECOND_NAME_ERROR',
+
+    // номер телефона
+    EMPTY_PHONE_ERROR = 'EMPTY_PHONE_ERROR',
+    FORMAT_PHONE_ERROR = 'FORMAT_PHONE_ERROR',
+
+    // почта
+    EMPTY_EMAIL_ERROR = 'EMPTY_EMAIL_ERROR',
+    FORMAT_EMAIL_ERROR = 'FORMAT_EMAIL_ERROR',
+
+    // почта
+    FORMAT_COMMENT_ERROR = 'FORMAT_COMMENT_ERROR',
+
+    // корзина
+    EMPTY_CART_ERROR = 'EMPTY_CART_ERROR',
+}

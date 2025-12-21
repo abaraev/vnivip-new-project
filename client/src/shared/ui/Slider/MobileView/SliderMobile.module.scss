@@ -1,0 +1,66 @@
+.SliderMobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.imgWrapper2 {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    overflow: hidden;
+}
+
+.imgWrapper1 {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+}
+
+.img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 35vh;
+}
+
+.imagesWrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease-out;
+    width: 100%;
+}
+
+.cornerUpper {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    z-index: 1;
+}
+
+.cornerLower {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.sliderWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.arrowsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow {
+    cursor: pointer;
+}

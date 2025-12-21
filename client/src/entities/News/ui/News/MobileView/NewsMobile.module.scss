@@ -1,0 +1,58 @@
+.NewsMobile {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        .cover {
+            transform: scale(1.02);
+        }
+        .content {
+            backdrop-filter: brightness(60%);
+        }
+    }
+}
+
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    will-change: transform;
+    background: var(--blue3);
+}
+
+.title {
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.content {
+    border-radius: 10px;
+    backdrop-filter: brightness(50%);
+    transition: all 0.5s ease;
+    will-change: transform;
+    z-index: 1;
+    position: relative;
+
+    .description {
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+

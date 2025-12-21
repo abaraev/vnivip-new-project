@@ -1,0 +1,67 @@
+.CarouselDesktop {
+    width: 100%;
+}
+
+@mixin white-gradient {
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+.slideTrack {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    min-height: 146px;
+    background: var(--white4);
+    box-shadow: 0 0 10px 0 var(--grey);
+    &::before,
+    &::after {
+        @include white-gradient;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 50px;
+        z-index: 2;
+    }
+    &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+    &::before {
+        left: 0;
+        top: 0;
+    }
+}
+
+.partner {
+    width: calc(100% / 4);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: -1px 0 1px -1px var(--black);
+}
+
+.slideWrapper {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    transform: translateX(0);
+    -webkit-animation: Scroll 10s linear infinite;
+    animation: Scroll 10s linear infinite;
+    will-change: transform;
+}
+
+@keyframes Scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

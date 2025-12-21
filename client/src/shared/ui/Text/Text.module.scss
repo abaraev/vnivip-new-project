@@ -1,0 +1,251 @@
+.Text {
+    white-space: pre-wrap;
+    display: block;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.textIndent {
+    text-indent: 40px;
+}
+
+
+
+// desktop and mobile
+
+.large_desktop {
+    font: var(--font-large-desktop);
+}
+
+.h1_desktop {
+    font: var(--font-h1-desktop);
+}
+
+.h1_light_desktop {
+    font: var(--font-h1-light-desktop);
+}
+
+.h2_desktop {
+    font: var(--font-h2-desktop);
+}
+
+.h2_light_desktop {
+    font: var(--font-h2-light-desktop);
+}
+
+.h2_medium_desktop {
+    font: var(--font-h2-medium-desktop);
+}
+
+.h3_desktop {
+    font: var(--font-h3-desktop);
+}
+
+.h3_light_desktop {
+    font: var(--font-h3-light-desktop);
+}
+
+.h4_desktop {
+    font: var(--font-h4-desktop);
+}
+
+.h4_medium_desktop {
+    font: var(--font-h4-medium-desktop);
+}
+
+.h4_italic_desktop {
+    font: var(--font-h4-italic-desktop);
+}
+
+.body_l_light_desktop {
+    font: var(--font-body-l-light-desktop);
+}
+
+.body_l_desktop {
+    font: var(--font-body-l-desktop);
+}
+
+.body_l_medium_desktop {
+    font: var(--font-body-l-medium-desktop);
+}
+
+.body_desktop {
+    font: var(--font-body-desktop);
+}
+
+.body_light_desktop {
+    font: var(--font-body-light-desktop);
+}
+
+.body_light_italic_desktop {
+    font: var(--font-body-light-italic-desktop);
+}
+
+.body_medium_desktop {
+    font: var(--font-body-medium-desktop);
+}
+
+.body_s_desktop {
+    font: var(--font-body-s-desktop);
+}
+
+.body_s_light_italic_desktop {
+    font: var(--font-body-s-light-italic-desktop);
+}
+
+.body_s_medium_desktop {
+    font: var(--font-body-s-medium-desktop);
+}
+
+.body_mini_desktop {
+    font: var(--font-body-mini-desktop);
+}
+
+.body_mini_medium_desktop {
+    font: var(--font-body-mini-medium-desktop);
+}
+
+.button_desktop {
+    font: var(--font-button-desktop);
+}
+
+.menu_desktop {
+    font: var(--font-menu-desktop);
+}
+
+.menu_caps_desktop {
+    font: var(--font-menu-caps-desktop);
+}
+
+.menu_large_italic_desktop {
+    font: var(--font-menu-large-italic-desktop);
+}
+
+.menu_large_italic_medium_desktop {
+    font: var(--font-menu-large-italic-medium-desktop);
+}
+
+// mobile
+
+.large_mobile {
+    font: var(--font-large-mobile);
+}
+
+.h1_mobile {
+    font: var(--font-h1-mobile);
+}
+
+.h1_mini_mobile {
+    font: var(--font-h1-mini-mobile);
+}
+
+.h1_mini_italic_mobile {
+    font: var(--font-h1-mini-italic-mobile);
+}
+
+.h2_mobile {
+    font: var(--font-h2-mobile);
+}
+
+.h2_medium_mobile {
+    font: var(--font-h2-medium-mobile);
+}
+
+.h2_italic_mobile {
+    font: var(--font-h2-italic-mobile);
+}
+
+.h3_mobile {
+    font: var(--font-h3-mobile);
+}
+
+.h3_medium_mobile {
+    font: var(--font-h3-medium-mobile);
+}
+
+.body_l_mobile {
+    font: var(--font-body-l-mobile);
+}
+
+.body_l_light_mobile {
+    font: var(--font-body-l-light-mobile);
+}
+
+.body_l_medium_mobile {
+    font: var(--font-body-l-medium-mobile);
+}
+
+.body_mobile {
+    font: var(--font-body-mobile);
+}
+
+.body_light_italic_mobile {
+    font: var(--font-body-light-italic-mobile);
+}
+
+.body_medium_mobile {
+    font: var(--font-body-medium-mobile);
+}
+
+.body_s_mobile {
+    font: var(--font-body-s-mobile);
+}
+
+.body_s_medium_mobile {
+    font: var(--font-body-s-medium-mobile);
+}
+
+.body_mini_mobile {
+    font: var(--font-body-mini-mobile);
+}
+
+.white {
+    color: var(--white4);
+}
+
+.dark {
+    color: var(--dark);
+}
+
+.dark2 {
+    color: var(--dark2);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+
+.grey3 {
+    color: var(--grey3);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.blue2 {
+    color: var(--blue2);
+}
+
+.red {
+    color: var(--red);
+}
+
+.green {
+    color: var(--green);
+}

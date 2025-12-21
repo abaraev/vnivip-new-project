@@ -1,0 +1,38 @@
+.AdminServiceDesktop {
+    background: var(--grey-light2);
+    width: calc((100% - 60px) / 3);
+    min-width: calc((100% - 60px) / 3);
+    height: 60vh;
+    min-height: 440px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px -1px black;
+}
+
+.price {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.price::after {
+    content: ' \20BD';
+}
+
+.name {
+    width: 100%;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.img {
+    width: 100% !important;
+    border-radius: 5px;
+    height: 32vh !important;
+}
+
+

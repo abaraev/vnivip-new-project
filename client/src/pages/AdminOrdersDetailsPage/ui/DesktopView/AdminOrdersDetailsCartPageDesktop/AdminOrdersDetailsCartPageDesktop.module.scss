@@ -1,0 +1,15 @@
+.AdminOrdersDetailsCartPageDesktop {
+    background: var(--blue-light2);
+    border-radius: 10px;
+}
+
+
+
+.totalSum::after {
+    content: ' \20BD';
+}
+
+.totalSumWrapper {
+    background: var(--white2);
+    border-radius: 10px;
+}

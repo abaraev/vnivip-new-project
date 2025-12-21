@@ -1,0 +1,33 @@
+.HeaderMobile {
+    height: var(--header-mobile-height);
+    padding-inline: 10px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: var(--header-mobile-z-index);
+}
+
+.fixed {
+    position: fixed;
+    background: rgba(var(--blue3-rgb), 0.8);
+    animation: Attach 1s ease forwards;
+    top: -100%;
+    box-shadow: 0 1px 7px -2px var(--black);
+}
+
+.burgerIconAbsolute {
+    position: fixed;
+    top: calc((var(--header-mobile-height) - 33px) / 2);
+    right: 10px;
+    z-index: calc(var(--burger-menu-z-index) + 1);
+}
+
+@keyframes Attach {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}

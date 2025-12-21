@@ -1,0 +1,22 @@
+.AdminSidebarDesktop {
+    background: var(--blue2);
+    width: 30%;
+}
+
+.title {
+    width: 100%;
+}
+
+.currentSection {
+    backdrop-filter: brightness(105%);
+}
+
+.link {
+    padding: 15px;
+    border-radius: 50px;
+    width: 100%;
+    &:hover {
+        backdrop-filter: brightness(105%);
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,60 @@
+@import "reset";
+@import "variables/global";
+@import "themes/normal";
+@import "themes/accessibility";
+
+
+html {
+
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+#root {
+
+}
+
+.flex {
+    display: flex;
+}
+
+.app_desktop {
+    position: relative;
+    background: var(--white);
+    overflow: auto;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.app_mobile {
+    min-width: 320px;
+    position: relative;
+    background: var(--white);
+    overflow: auto;
+    height: 100vh;
+}
+
+.menu-open-body {
+    overflow-y: hidden;
+}
+
+.burger-menu-open-body {
+    overflow-y: hidden;
+}
+
+.is-loading {
+    z-index: 100;
+    visibility: visible;
+    opacity: 1;
+}
+
+.picker {
+    position: relative;
+}
+
+.rc-backdrop {
+    display: none;
+}

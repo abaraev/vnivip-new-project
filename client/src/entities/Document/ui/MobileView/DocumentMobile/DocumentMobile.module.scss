@@ -1,0 +1,32 @@
+.DocumentMobile {
+    background: var(--grey-light2);
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        filter: brightness(103%);
+    }
+    position: relative;
+}
+
+.nameWrapper {
+    width: 100%;
+}
+
+.name {
+    max-width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.size {
+    position: absolute;
+    right: 10px;
+}
+
+.contentWrapper {
+    width: 70%;
+}

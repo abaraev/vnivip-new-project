@@ -1,0 +1,16 @@
+.service {
+    width: calc((100% - 90px) / 4) !important;
+}
+
+@media (max-width: 1300px) {
+    .service {
+        width: calc((100% - 60px) / 3) !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .service {
+        width: calc((100% - 30px) / 2) !important;
+        height: 85vh !important;
+    }
+}

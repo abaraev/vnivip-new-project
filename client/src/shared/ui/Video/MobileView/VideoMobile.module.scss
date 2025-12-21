@@ -1,0 +1,117 @@
+.VideoMobile {
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+        .playIcon {
+            opacity: 0.9;
+        }
+    }
+}
+
+.videoTag {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: var(--black2);
+}
+
+.poster {
+    background: var(--black2);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: all 0.5s ease;
+    will-change: transform;
+    filter: brightness(80%);
+    &:hover {
+        transform: scale(1.02);
+        filter: brightness(90%);
+    }
+}
+
+.playIcon {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.borderR4 {
+    border-radius: 4px;
+}
+
+.borderR8 {
+    border-radius: 8px;
+}
+
+.borderR16 {
+    border-radius: 16px;
+}
+
+.borderR32 {
+    border-radius: 32px;
+}
+
+.borderR64 {
+    border-radius: 64px;
+}
+
+.borderR128 {
+    border-radius: 128px;
+}
+
+.borderR10 {
+    border-radius: 10px;
+}
+
+.borderR20 {
+    border-radius: 20px;
+}
+
+.borderR30 {
+    border-radius: 30px;
+}
+
+.borderR40 {
+    border-radius: 40px;
+}
+
+.borderR50 {
+    border-radius: 50px;
+}
+
+.borderR60 {
+    border-radius: 60px;
+}
+
+.borderR70 {
+    border-radius: 70px;
+}
+
+.borderR80 {
+    border-radius: 80px;
+}
+
+.borderR90 {
+    border-radius: 90px;
+}
+
+.borderR100 {
+    border-radius: 100px;
+}
+
+.borderR110 {
+    border-radius: 110px;
+}
+
+.borderR120 {
+    border-radius: 120px;
+}

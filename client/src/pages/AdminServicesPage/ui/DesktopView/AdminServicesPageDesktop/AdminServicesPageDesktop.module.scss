@@ -1,0 +1,17 @@
+.AdminServicesPageDesktop {
+    width: 70%;
+    overflow: auto;
+}
+
+.input {
+    flex-grow: 1;
+}
+
+.addServiceModalContent {
+    width: 50vw;
+}
+
+.btnDisabled {
+    pointer-events: none;
+    opacity: 0.6;
+}

@@ -1,0 +1,50 @@
+.MainNewsMobile {
+    border-radius: 10px;
+    width: 100%;
+    height: 38vh;
+    min-height: 255px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        .cover {
+            transform: scale(1.02);
+        }
+        .content {
+            backdrop-filter: brightness(60%);
+        }
+    }
+}
+
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    will-change: transform;
+    background: var(--blue3);
+}
+
+
+.content {
+    border-radius: 10px;
+    backdrop-filter: brightness(50%);
+    transition: all 0.5s ease;
+    will-change: transform;
+    z-index: 1;
+    position: relative;
+
+    .description {
+        width: 90%;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+

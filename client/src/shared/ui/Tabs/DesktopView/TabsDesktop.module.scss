@@ -1,0 +1,28 @@
+.TabsDesktop {
+    display: flex;
+    gap: 20px;
+}
+
+.tab,
+.tabSelected {
+    height: 45px;
+    width: 200px;
+    font: var(--font-body-desktop);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tab {
+    background: var(--white);
+    border: 2px solid var(--blue3);
+    cursor: pointer;
+}
+
+.tabSelected {
+    background: var(--blue3);
+    border: 2px solid var(--blue3);
+    color: var(--white);
+}

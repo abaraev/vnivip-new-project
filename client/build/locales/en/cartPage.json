@@ -1,0 +1,22 @@
+{
+  "Корзина": "Cart",
+  "Оформление заказа": "Placing an order",
+  "Нет добавленных услуг": "No services added",
+  "Имя": "Name",
+  "Фамилия": "Surname",
+  "Номер телефона": "Phone number",
+  "Электронная почта": "Email",
+  "Контактная информация": "Contact information",
+  "Общая сумма": "Total sum",
+  "Отправить заказ": "Send order",
+  "Итого к оплате": "Total to be paid",
+  "Недопустимое имя": "Invalid name",
+  "Недопустимая фамилия": "Invalid surname",
+  "Недопустимый номер телефона": "Invalid phone number",
+  "Недопустимый электронный адрес почты": "Invalid email address",
+  "Корзина пуста": "The cart is empty",
+  "заказ принят": "Your order has been accepted! Your order number - №{{orderNumber}}. Expect feedback.",
+    "Комментарий": "Комментарий",
+    "Загрузить файл": "Загрузить файл",
+  "Прикрепить файл": "Прикрепить файл"
+}

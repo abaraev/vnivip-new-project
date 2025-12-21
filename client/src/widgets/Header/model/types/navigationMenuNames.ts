@@ -1,0 +1,7 @@
+export enum navigationMenuNames {
+    UNIVERSITY = 'UNIVERSITY',
+    FOR_APPLICANTS = 'FOR_APPLICANTS',
+    FOR_STUDENTS = 'FOR_STUDENTS',
+    SCIENCE = 'SCIENCE',
+    COOPERATION = 'COOPERATION',
+}

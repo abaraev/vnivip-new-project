@@ -1,0 +1,43 @@
+.MemberDesktop {
+    min-height: 511px;
+    height: 70vh;
+    min-width: 80%;
+    width: 80%;
+    background: var(--white4);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.image {
+    height: 100% !important;
+    width: 100% !important;
+    box-shadow: 0 0 2px 0 var(--black);
+}
+
+.imageWrapper {
+    height: 100%;
+    width: 35%;
+    padding-right: 15px;
+    border-right: 5px solid var(--grey-light2);
+}
+
+.infoWrapper {
+    width: 65%;
+}
+
+@media (max-width: 1300px) {
+    .MemberDesktop {
+        min-height: 211px;
+    }
+
+    .imageWrapper {
+        width: 40%;
+        padding-right: 10px;
+    }
+
+    .infoWrapper {
+        width: 60%;
+    }
+}

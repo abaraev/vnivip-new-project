@@ -1,0 +1,47 @@
+.AdminMemberSmallDesktop {
+    width: calc((100% - 60px) / 2);
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--grey4);
+    position: relative;
+    height: 60vh;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.editWrapper {
+    background: var(--white3);
+    height: 15%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.contentWrapper {
+    background: var(--white2);
+    border-radius: 10px;
+    box-shadow: 0 0 4px -2px var(--black);
+    border: 1px solid var(--grey4);
+    min-height: 365px;
+}
+
+.arrowLeft,
+.arrowRight {
+    position: absolute;
+}
+
+.arrowLeft {
+    top: 50%;
+    transform: translateY(-50%) translateX(-60%);
+    left: 0;
+}
+
+.arrowRight {
+    top: 50%;
+    transform: translateY(-50%) translateX(60%);
+    right: 0;
+}

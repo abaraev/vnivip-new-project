@@ -1,0 +1,235 @@
+.CoverMobile {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 5;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.5s;
+    z-index: 1;
+    opacity: 0;
+    will-change: opacity;
+}
+
+.activeSlide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slideBg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.slideBg::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--black-opacity);
+}
+
+.slideBg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 90%;
+}
+
+.skew {
+    position: absolute;
+    width: 93vw;
+    height: 100%;
+    left: -66vw;
+    transform: skew(35deg);
+    transform-origin: left top;
+    overflow: hidden;
+}
+
+.skewOver {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    right: -73vw;
+    overflow: hidden;
+    transform: skew(-35deg);
+    transform-origin: left top;
+    z-index: 3;
+}
+
+.imgWrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.imgWrapper::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--black-opacity);
+}
+
+.imgWrapper img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 80%;
+}
+
+.firstSlide {
+    .slideBg::after {
+        background: var(--black2);
+        animation: lightening 5s ease forwards;
+        will-change: background;
+    }
+
+    .skew::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        background: var(--black-opacity2);
+        left: 50%;
+        transform: translateX(-50%) scaleX(0.4);
+        animation: skew-to-big 1.5s 1s cubic-bezier(.23,1,.32,1) forwards;
+        will-change: transform;
+    }
+
+    .imgWrapper {
+        bottom: 0;
+        height: 0;
+        overflow: hidden;
+        animation: img-to-up 1.5s 1.5s cubic-bezier(.86,0,.07,1) forwards;
+        will-change: height;
+    }
+
+    .imgWrapper::after {
+        background: var(--black2);
+        animation: lightening 1.5s 1.5s ease forwards;
+        will-change: background;
+    }
+
+    .imgWrapper img {
+        width: 100vw;
+        height: 100vh;
+        object-position: 70%;
+        bottom: 0;
+        animation: img-to-left 1.5s 1.5s cubic-bezier(.86,0,.07,1) forwards;
+        will-change: object-position;
+    }
+}
+
+.small {
+    height: var(--header-mobile-height);
+    .skew {
+        width: 43vw;
+        height: 100%;
+        left: auto;
+        right: 12vw;
+    }
+
+    .skewOver {
+        width: 100vw;
+        height: 100%;
+        right: -20vw;
+    }
+
+    .imgWrapper img {
+        height: 15vh;
+    }
+
+    .firstSlide {
+        .imgWrapper {
+            height: 0;
+            animation: img-to-up2 1.5s 1.5s cubic-bezier(.86,0,.07,1) forwards;
+        }
+
+        .imgWrapper img {
+            height: 15vh;
+            object-position: 70%;
+            animation: img-to-left2 1.5s 1.5s cubic-bezier(.86,0,.07,1) forwards;
+        }
+    }
+}
+
+.large {
+    height: 100vh;
+}
+
+@keyframes lightening {
+    from {
+        background: var(--black2);
+    }
+    to {
+        background: var(--black-opacity);
+    }
+}
+
+@keyframes skew-to-big {
+    from {
+        transform: translateX(-50%) scaleX(0.4);
+    }
+    to {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+
+@keyframes img-to-up {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+@keyframes img-to-up2 {
+    from {
+        height: 0;
+    }
+    to {
+        height: 15vh;
+    }
+}
+
+@keyframes img-to-left {
+    from {
+        object-position: 70%;
+    }
+    to {
+        object-position: 80%;
+    }
+}
+
+@keyframes img-to-left2 {
+    from {
+        object-position: 70%;
+    }
+    to {
+        object-position: -20px;
+    }
+}

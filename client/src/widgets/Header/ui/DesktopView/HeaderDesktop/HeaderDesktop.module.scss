@@ -1,0 +1,52 @@
+.HeaderDesktop {
+    height: var(--header-desktop-height);
+    padding-right: 55px;
+    padding-left: 55px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: var(--header-desktop-z-index);
+}
+
+.fixed {
+    position: fixed;
+    background: rgba(var(--blue3-rgb), 0.8);
+    animation: Attach 1s ease forwards;
+    top: -100%;
+    box-shadow: 0 1px 7px -2px var(--black);
+    padding-right: 70px;
+}
+
+.burgerIconAbsolute {
+    position: fixed;
+    top: 41px;
+    right: 70px;
+    z-index: calc(var(--burger-menu-z-index) + 1);
+}
+
+.langSwitcherAbsolute {
+    top: 48px;
+    right: 133px;
+    position: fixed;
+    z-index: calc(var(--burger-menu-z-index) + 1);
+}
+
+.btns {
+    margin-left: 40px;
+}
+
+@keyframes Attach {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .dropdownsWrapper {
+        display: none;
+    }
+}

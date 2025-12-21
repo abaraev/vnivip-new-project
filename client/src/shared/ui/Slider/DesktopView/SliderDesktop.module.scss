@@ -1,0 +1,82 @@
+.SliderDesktop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    min-height: 584px;
+}
+
+.imgWrapper2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imgWrapper1 {
+    position: relative;
+    width: 73vw;
+    height: 100%;
+}
+
+.img {
+    object-position: center;
+    object-fit: cover;
+    width: 73vw;
+    height: 100%;
+}
+
+.imagesWrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease-out;
+}
+
+.cornerUpper {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    z-index: 1;
+}
+
+.cornerLower {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.sliderWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.arrowsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.sliderRight {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: end;
+}
+
+@media (max-width: 1300px) {
+    .SliderDesktop {
+        height: 70vh;
+        min-height: 450px;
+    }
+}

@@ -1,0 +1,67 @@
+.field {
+    width: 100%;
+    height: 45px;
+    font: var(--font-body-desktop);
+    color: var(--black);
+    padding: 13px 16px 13px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    background: var(--white);
+}
+
+.field::placeholder {
+    color: var(--grey3);
+}
+
+.requiredText {
+    font: var(--font-body-mini-desktop);
+    padding-left: 5px;
+}
+
+.red {
+    .field {
+        border: 1px solid var(--red);
+    }
+    .requiredText {
+        color: var(--red);
+        padding-left: 0;
+    }
+    .field::placeholder {
+        color: var(--red);
+    }
+}
+
+.focused {
+    .field {
+        border: 1px solid var(--blue3);
+    }
+    .field::placeholder {
+        color: var(--black);
+    }
+}
+
+.redFocused {
+    .field {
+        border: 1px solid var(--red);
+    }
+    .field::placeholder {
+        color: var(--red);
+    }
+    .requiredText {
+        color: var(--red);
+    }
+}
+
+.number {
+    .field {
+        padding-left: 40px;
+    }
+    position: relative;
+}
+
+.flag {
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 17px;
+}

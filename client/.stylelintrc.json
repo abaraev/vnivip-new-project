@@ -1,0 +1,14 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "indentation": [4],
+        "selector-class-pattern": null,
+        "color-hex-case": "upper",
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "indentation": null,
+        "declaration-colon-newline-after": null,
+        "max-line-length": null,
+        "block-no-empty": null
+  }
+}

@@ -1,0 +1,45 @@
+.AdminDocumentDesktop {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.anchor {
+    display: block;
+    background: var(--grey-light2);
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    &:hover {
+        filter: brightness(102%);
+    }
+}
+
+
+.nameWrapper {
+    width: 100%;
+}
+
+.name {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.size {
+    position: absolute;
+    right: 16px;
+}
+
+.contentWrapper {
+    width: 70%;
+}
+
+.deleteBtn {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    z-index: 5;
+}

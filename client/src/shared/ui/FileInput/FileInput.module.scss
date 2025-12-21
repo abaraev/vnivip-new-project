@@ -1,0 +1,28 @@
+.FileInput {
+    outline: none;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-inline: 9px;
+    padding-block: 5px;
+    font: var(--font-body-s-desktop);
+    background: var(--white2);
+    color: var(--dark2);
+    &:hover {
+        background: var(--blue-light2);
+    };
+}
+
+.input {
+    display: none;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: auto;
+}

@@ -1,0 +1,40 @@
+.AnchorMobile {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.white {
+    color: var(--white4);
+    font: var(--font-body-mobile);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.blue {
+    color: var(--blue2);
+    font: var(--font-body-mobile);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.7;
+    }
+}

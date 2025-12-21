@@ -1,0 +1,48 @@
+.AppLinkDesktop {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.white {
+    color: var(--white4);
+    font: var(--font-menu-desktop);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.white2 {
+    color: var(--white4);
+    font: var(--font-body-desktop);
+}
+
+.grey_small {
+    color: var(--grey-light);
+    font: var(--font-body-desktop);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.6;
+        text-decoration: underline;
+    }
+}
+
+.grey {
+    color: var(--grey);
+    font: var(--font-body-s-desktop);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.4;
+    }
+}
+
+.dark2 {
+    color: var(--dark2);
+    font: var(--font-body-s-desktop);
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.4;
+    }
+}

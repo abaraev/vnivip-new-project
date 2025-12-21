@@ -1,0 +1,56 @@
+.Wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.select {
+    outline: none;
+    border: 1px solid var(--blue-light);
+    border-radius: 5px;
+    background-color: var(--grey-light);
+    color: var(--dark2);
+    font: var(--font-body-desktop);
+    width: 100%;
+    height: 100%;
+    padding-inline: 40px;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+    option:first-child {
+        display: none;
+    }
+}
+
+.haveSize {
+    height: auto;
+
+    .select {
+        padding-inline: 0;
+    }
+
+    .option {
+        padding-inline: 40px;
+    }
+}
+
+.select:hover {
+    background-color: var(--blue-light);
+}
+
+.option {
+    color: var(--dark2);
+    background: var(--white);
+    width: 100%;
+    &:checked {
+        background: var(--blue-light);
+    }
+    cursor: pointer;
+    box-shadow: 0 0 1px 0 var(--blue-light);
+
+    &:hover {
+        background: var(--blue-light2);
+    }
+}
+

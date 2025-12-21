@@ -1,0 +1,43 @@
+.Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clickable {
+    transition: opacity 0.2s ease-in;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.clickable_bg {
+    transition: opacity 0.2s ease-in;
+    cursor: pointer;
+    background: var(--blue-light);
+    border-radius: 50px;
+    padding: 5px;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.blue {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: var(--blue3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    .svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        transform: scale(1.03);
+    }
+}

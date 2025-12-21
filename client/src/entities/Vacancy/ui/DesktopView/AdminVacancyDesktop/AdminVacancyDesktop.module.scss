@@ -1,0 +1,49 @@
+.AdminVacancyDesktop {
+    background: var(--grey-light2);
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.contentWrapper {
+    cursor: pointer;
+    background: var(--blue-light);
+    border-radius: 10px;
+}
+
+.deleteBtn {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.arrowIsOpen {
+    transform: rotateX(180deg);
+}
+
+.description {
+    white-space: pre-wrap;
+    padding-inline: 40px;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    interpolate-size: allow-keywords;
+    user-select: text;
+}
+
+.descriptionVisible {
+    .description {
+        padding-block: 20px;
+        height: auto;
+    }
+
+    .contentWrapper {
+        box-shadow: 0 1px 4px -1px var(--black-opacity);
+    }
+}

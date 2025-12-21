@@ -1,0 +1,18 @@
+.CartPageServicesMobile {
+    background: var(--blue-light2);
+    border-radius: 5px;
+    min-height: 69vh;
+}
+
+.service {
+    box-shadow: 0 0 2px -1px black;
+}
+
+.emptyText {
+    flex-grow: 1;
+}
+
+.servicesList {
+    overflow-y: auto;
+    height: 65vh;
+}

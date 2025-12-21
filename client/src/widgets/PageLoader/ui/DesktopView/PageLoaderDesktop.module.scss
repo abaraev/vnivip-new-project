@@ -1,0 +1,39 @@
+.PageLoaderDesktop {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    pointer-events: none;
+    visibility: visible;
+    opacity: 1;
+    background-color: var(--blue);
+    cursor: wait;
+    will-change: opacity;
+}
+
+.loadingDone {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+}
+
+.icon {
+    opacity: 0;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

@@ -1,0 +1,20 @@
+.contentWrapper {
+    width: 60%;
+    box-shadow: -1px 0 3px -2px var(--grey), 1px 0 3px -2px var(--grey);
+}
+
+.title {
+    width: 100%;
+}
+
+.newsTitle {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.newsDescription {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

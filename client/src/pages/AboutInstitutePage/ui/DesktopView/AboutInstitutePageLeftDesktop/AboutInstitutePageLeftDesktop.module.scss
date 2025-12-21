@@ -1,0 +1,62 @@
+.AboutInstitutePageLeftDesktop {
+    width: 67%;
+    z-index: 2;
+}
+
+.instituteName {
+    margin-left: auto;
+    width: 670px;
+}
+
+.historyTitle {
+    width: 100%;
+}
+
+.recentEventsTitle {
+    width: 100%;
+    box-shadow: 0 2px 3px -3px var(--black);
+    padding-bottom: 10px;
+}
+
+
+.historyText {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.quoteWrapper {
+    width: 90vw;
+    position: relative;
+}
+
+.quote {
+    border-top: 50px solid var(--white);
+    border-right: 50px solid var(--white);
+    border-bottom: 50px solid var(--white);
+    background: var(--white);
+    min-width: 1050px;
+}
+
+.quoteText {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.paragraphsWrapper {
+    max-width: 1070px;
+}
+
+@media (max-width: 1300px) {
+    .quote {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .instituteName {
+        width: 500px;
+    }
+}
+

@@ -1,0 +1,28 @@
+.TabsMobile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab,
+.tabSelected {
+    height: 40px;
+    width: 160px;
+    font: var(--font-body-mobile);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tab {
+    background: var(--white);
+    border: 2px solid var(--blue3);
+    cursor: pointer;
+}
+
+.tabSelected {
+    background: var(--blue3);
+    border: 2px solid var(--blue3);
+    color: var(--white);
+}

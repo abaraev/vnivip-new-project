@@ -1,0 +1,43 @@
+.BurgerMenuSpoilerMobile {
+    box-shadow: 0 1px 1px -1px var(--white4);
+}
+
+.BurgerMenuSpoilerMobile:first-child {
+    box-shadow: 0 -1px 1px -1px var(--white4), 0 1px 1px -1px var(--white4);
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.arrowIsOpen {
+    transform: rotateX(180deg);
+}
+
+.spoilerContent {
+    transition: all 0.2s ease;
+    display: grid;
+}
+
+.spoilerContentEntering {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    padding: 20px;
+}
+
+.spoilerContentEntered {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    padding: 20px;
+}
+
+.spoilerContentExiting {
+    opacity: 0;
+    grid-template-rows: 0fr;
+}
+
+.spoilerContentExited {
+    opacity: 0;
+    grid-template-rows: 0fr;
+}
+

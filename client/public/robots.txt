@@ -1,0 +1,45 @@
+User-agent: Yandex
+Disallow: /static
+Disallow: /admin_auth
+Disallow: /admin_orders
+Disallow: /admin_news
+Disallow: /admin_services
+Disallow: /admin_acts
+Disallow: /admin_members
+Disallow: /admin_competitions
+Disallow: /admin_vacancies
+Disallow: /admin_recent_events
+Disallow: /*.png
+Disallow: /*.ico
+
+User-agent: Googlebot
+Disallow: /static
+Disallow: /admin_auth
+Disallow: /admin_orders
+Disallow: /admin_news
+Disallow: /admin_services
+Disallow: /admin_acts
+Disallow: /admin_members
+Disallow: /admin_competitions
+Disallow: /admin_vacancies
+Disallow: /admin_recent_events
+Disallow: /*.png
+Disallow: /*.ico
+
+User-agent: *
+Disallow: /static
+Disallow: /admin_auth
+Disallow: /admin_orders
+Disallow: /admin_news
+Disallow: /admin_services
+Disallow: /admin_acts
+Disallow: /admin_members
+Disallow: /admin_competitions
+Disallow: /admin_vacancies
+Disallow: /admin_recent_events
+Disallow: /*.png
+Disallow: /*.ico
+
+
+
+

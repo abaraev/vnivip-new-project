@@ -1,0 +1,19 @@
+.AdminVacanciesPageDesktop {
+    width: 70%;
+    overflow: auto;
+}
+
+.input {
+    flex-grow: 1;
+}
+
+.addVacancyModalContent {
+    width: 50vw;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.btnDisabled {
+    pointer-events: none;
+    opacity: 0.6;
+}

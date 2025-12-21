@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="ru">
+<head>
+    <link
+            rel="preload"
+            as="image"
+            href="https://vnivip.ru/assets/img.jpg" />
+</head>
+<body>
+<!--$--><!--html--><!--body-->
+<div>Имя: <b>{{name}}</b></div>
+<div>Фамилия: {{#if secondName}} <b>{{secondName}}</b> {{else}} <b>Не указано</b> {{/if}}</div>
+<div>Номер телефона: <b>+{{phone}}</b></div>
+<div>Почта: <b>{{email}}</b></div>
+<br />
+<div>Комментарий: {{#if comment}} <b>{{comment}}</b> {{else}} <b>Не указано</b> {{/if}}</div>
+<br />
+<br />
+<div>Корзина:</div>
+<br />
+{{#each cart}}
+    <div>{{this.index}}) {{this.name}} | {{this.priceStr}} ₽ * {{this.amount}} = <b>{{this.totalSumStr}}</b> ₽</div>
+{{/each}}
+<br />
+<div>Всего к оплате: <b>{{totalCartSum}}</b> ₽</div>
+<br />
+<br />
+<br />
+
+
+
+
+{{#each cart}}
+    <table
+            border="0"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            align="center">
+        <tbody>
+        <tr>
+            <td>
+                <table
+                        align="center"
+                        width="100%"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        role="presentation"
+                        style="display:flex;flex-direction:column;padding:1rem;background-color:rgb(229,231,235);min-height:65vh;border-radius:5px;max-width:300px;margin-bottom:2.5rem">
+                    <tbody>
+                    <tr>
+                        <td>
+                            {{#if this.coverImg}}
+                                <img
+                                        alt="coverImg"
+                                        src="https://vnivip.ru/api/static/images/{{this.coverImg}}"
+                                        style="display:block;outline:none;border:none;text-decoration:none;width:100%;height:32vh;border-radius:5px;object-fit:cover;object-position:center" />
+                            {{else}}
+                                <img
+                                        alt="defaultCoverImg"
+                                        src="https://vnivip.ru/assets/img.jpg"
+                                        style="display:block;outline:none;border:none;text-decoration:none;width:100%;height:32vh;border-radius:5px;object-fit:cover;object-position:center" />
+                            {{/if}}
+
+                            <table
+                                    align="center"
+                                    width="100%"
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    role="presentation"
+                                    style="display:flex;flex-direction:column;justify-content:space-between;flex-grow:1">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <p
+                                                style='font-size:18px;line-height:24px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:450;-webkit-hyphens:auto;hyphens:auto;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;margin-top:16px;margin-bottom:16px'>
+                                            {{this.name}}
+                                        </p>
+                                        <div
+                                                style='font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:450;font-size:20px;color:rgb(0,166,244);display:flex;justify-content:space-between;align-items:center;padding: 6vh 0 0 0'>
+                                            {{this.price}} ₽
+                                            <div
+                                                    style='font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:450;font-size:20px;color:rgb(0,166,244);padding: 0 0 0 40px'>
+                                                {{this.amount}} шт.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{{/each}}
+
+<!--/$-->
+</body>
+</html>
