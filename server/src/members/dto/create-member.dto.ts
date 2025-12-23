@@ -19,6 +19,12 @@ export class CreateMemberDto {
     @IsOptional()
     @IsNotEmpty({message: 'cannot be empty'})
     @IsString({message: 'required string'})
+    @Length(1, 1024, {message: 'required length from 1 to 1024'})
+    readonly bio: string;
+
+    @IsOptional()
+    @IsNotEmpty({message: 'cannot be empty'})
+    @IsString({message: 'required string'})
     @Length(1, 128, {message: 'required length from 1 to 128'})
     readonly status?: string;
 

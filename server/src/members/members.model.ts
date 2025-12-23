@@ -3,6 +3,7 @@ import {Column, DataType, Model, Table} from "sequelize-typescript";
 interface memberCreationAttrs {
     fullName: string;
     jobName?: string;
+    bio?: string;
     status?: string;
     section: string;
     email?: string;
@@ -21,6 +22,9 @@ export class Member extends Model<Member, memberCreationAttrs> {
 
     @Column({type: DataType.STRING, allowNull: true})
     jobName: string;
+
+    @Column({type: DataType.TEXT, allowNull: true})
+    bio: string;
 
     @Column({type: DataType.STRING, allowNull: true})
     status: string;

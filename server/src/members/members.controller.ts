@@ -27,6 +27,7 @@ import {ChangePhoneMemberDto} from "./dto/change-phone-member.dto";
 import {DeleteAvatarMemberDto} from "./dto/delete-avatar-member.dto";
 import {ChangeAvatarMemberDto} from "./dto/change-avatar-member.dto";
 import {DeleteMemberDto} from "./dto/delete-member.dto";
+import {ChangeBioMemberDto} from "./dto/change-bio-member.dto";
 
 @Controller('members')
 export class MembersController {
@@ -43,6 +44,12 @@ export class MembersController {
     @Patch('change-fullName')
     changeFullName(@Body() dto: ChangeFullNameMemberDto) {
         return this.membersService.changeFullName(dto);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Patch('change-bio')
+    changeBio(@Body() dto: ChangeBioMemberDto) {
+        return this.membersService.changeBio(dto);
     }
 
     @UseGuards(JwtAuthGuard)

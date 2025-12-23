@@ -38,7 +38,9 @@ const NewsDetailsPageMobile = memo((props: NewsDetailsPageMobileProps) => {
     const news = useSelector(getNewsDetailsPageNews);
 
     useEffect(() => {
-        dispatch(fetchNewFullNews({ newsId: Number(id) }));
+        if (id) {
+            dispatch(fetchNewFullNews({ newsId: Number(id) }));
+        }
     }, [dispatch, id]);
 
     return (

@@ -1,3 +1,12 @@
-.text {
+.fullName {
+    width: 100%;
+}
+
+
+.jobName,
+.status {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     width: 100%;
 }

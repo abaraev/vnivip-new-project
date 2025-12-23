@@ -39,7 +39,9 @@ const NewsDetailsPageDesktop = memo((props: NewsDetailsPageDesktopProps) => {
     const isSmallScreen = useMediaQuery({ maxWidth: 1300 });
 
     useEffect(() => {
-        dispatch(fetchNewFullNews({ newsId: Number(id) }));
+        if (id) {
+            dispatch(fetchNewFullNews({ newsId: Number(id) }));
+        }
     }, [dispatch, id]);
 
     return (

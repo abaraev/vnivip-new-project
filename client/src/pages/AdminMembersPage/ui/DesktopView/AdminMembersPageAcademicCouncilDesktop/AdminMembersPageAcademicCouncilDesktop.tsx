@@ -88,9 +88,9 @@ export const AdminMembersPageAcademicCouncilDesktop = memo((props: AdminMembersP
                     )}
             </HStack>
             {!!membersAcademicCouncil?.length && isOpenSection && (
-                <HStack
+                <VStack
                     maxW
-                    gap={60}
+                    gap={70}
                     wrap="wrap"
                 >
                     {membersAcademicCouncil?.map((member, index) => (
@@ -104,7 +104,7 @@ export const AdminMembersPageAcademicCouncilDesktop = memo((props: AdminMembersP
                             onDelete={onDelete}
                         />
                     ))}
-                </HStack>
+                </VStack>
             )}
             {!membersAcademicCouncil?.length && isOpenSection && (
                 <HStack

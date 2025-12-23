@@ -23,7 +23,7 @@ export const MemberSmallMobile = memo((props: MemberSmallMobileProps) => {
         <VStack
             className={classNames(cls.MemberSmallMobile, {}, [className])}
             justify="between"
-            gap={10}
+            gap={40}
             padding={10}
         >
             <MemberSmallTopMobile data={data} />

@@ -1,5 +1,5 @@
 .AdminMemberSmallDesktop {
-    width: calc((100% - 60px) / 2);
+    width: 100%;
     background: var(--white);
     border-radius: 10px;
     border: 1px solid var(--grey4);
@@ -29,19 +29,19 @@
     min-height: 365px;
 }
 
-.arrowLeft,
-.arrowRight {
+.arrowTop,
+.arrowBottom {
     position: absolute;
 }
 
-.arrowLeft {
-    top: 50%;
-    transform: translateY(-50%) translateX(-60%);
-    left: 0;
+.arrowTop {
+    top: 0;
+    left: 50%;
+    transform: translateY(-70%);
 }
 
-.arrowRight {
-    top: 50%;
-    transform: translateY(-50%) translateX(60%);
-    right: 0;
+.arrowBottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateY(70%);
 }

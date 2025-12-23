@@ -1,0 +1,20 @@
+.avatar {
+    height: 500px !important;
+    width: 350px !important;
+    box-shadow: 0 0 2px 0 var(--black);
+}
+
+.rightWrapper {
+    flex-grow: 1;
+}
+
+.fullName {
+    width: 80%;
+}
+
+.jobName,
+.status {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

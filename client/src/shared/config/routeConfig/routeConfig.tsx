@@ -35,6 +35,7 @@ import { AdminMemberDetailsPageDesktop } from 'pages/AdminMemberDetailsPage';
 import { AdminCompetitionsPageDesktop } from 'pages/AdminCompetitionsPage';
 import { AdminVacanciesPageDesktop } from 'pages/AdminVacanciesPage';
 import { AdminRecentEventsPageDesktop } from 'pages/AdminRecentEventsPage';
+import { MemberDetailsPageDesktop, MemberDetailsPageMobile } from 'pages/MemberDetailsPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -59,6 +60,7 @@ export enum AppRoutes {
     VACANCIES = 'vacancies',
     ACTS = 'acts',
     SERVICES = 'services',
+    MEMBER_DETAILS = 'member_details',
     CART = 'cart',
     NOT_FOUND = 'not_found',
     // Админам
@@ -96,6 +98,7 @@ export enum AppPaths {
     VACANCIES = '/vacancies',
     ACTS = '/acts',
     SERVICES = '/services',
+    MEMBER_DETAILS = '/member_details/:id',
     CART = '/cart',
     NOT_FOUND = '*',
     // Админам
@@ -133,6 +136,7 @@ export const RoutePath: Record<AppRoutes, AppPaths> = {
     [AppRoutes.VACANCIES]: AppPaths.VACANCIES,
     [AppRoutes.ACTS]: AppPaths.ACTS,
     [AppRoutes.SERVICES]: AppPaths.SERVICES,
+    [AppRoutes.MEMBER_DETAILS]: AppPaths.MEMBER_DETAILS,
     [AppRoutes.CART]: AppPaths.CART,
     [AppRoutes.NOT_FOUND]: AppPaths.NOT_FOUND,
     // Админам
@@ -223,6 +227,10 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.SERVICES]: {
         path: RoutePath.services,
         element: <ServicesPageDesktop />,
+    },
+    [AppRoutes.MEMBER_DETAILS]: {
+        path: RoutePath.member_details,
+        element: <MemberDetailsPageDesktop />,
     },
     [AppRoutes.CART]: {
         path: RoutePath.cart,
@@ -371,6 +379,10 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.SERVICES]: {
         path: RoutePath.services,
         element: <ServicesPageMobile />,
+    },
+    [AppRoutes.MEMBER_DETAILS]: {
+        path: RoutePath.member_details,
+        element: <MemberDetailsPageMobile />,
     },
     [AppRoutes.CART]: {
         path: RoutePath.cart,

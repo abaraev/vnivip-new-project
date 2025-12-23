@@ -10,20 +10,18 @@ import { FileInput } from 'shared/ui/FileInput/FileInput';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { fetchChangeEmail } from 'pages/AdminMemberDetailsPage/model/services/fetchChangeEmail';
-import { fetchChangePhone } from 'pages/AdminMemberDetailsPage/model/services/fetchChangePhone';
+import { TextArea, TextAreaSize, TextAreaTheme } from 'shared/ui/TextArea/TextArea';
+import { fetchChangeEmail } from '../../../model/services/fetchChangeEmail';
+import { fetchChangePhone } from '../../../model/services/fetchChangePhone';
 import { fetchChangeStatus } from '../../../model/services/fetchChangeStatus';
 import { fetchChangeAvatar } from '../../../model/services/fetchChangeAvatar';
 import { fetchDeleteAvatar } from '../../../model/services/fetchDeleteAvatar';
 import { fetchChangeFullName } from '../../../model/services/fetchChangeFullName';
 import { fetchChangeJobName } from '../../../model/services/fetchChangeJobName';
-import {
-    AdminMemberDetailsPageActions,
-} from '../../../model/slices/AdminMemberDetailsPageSlice';
-import {
-    getAdminMemberDetailsPageMember,
-} from '../../../model/selectors/getAdminMemberDetailsPage';
+import { AdminMemberDetailsPageActions } from '../../../model/slices/AdminMemberDetailsPageSlice';
+import { getAdminMemberDetailsPageMember } from '../../../model/selectors/getAdminMemberDetailsPage';
 import cls from './AdminMemberDetailsFormPageDesktop.module.scss';
+import { fetchChangeBio } from '../../../model/services/fetchChangeBio';
 
 interface AdminMemberDetailsFormPageDesktopProps {
     className?: string;
@@ -40,6 +38,10 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
     //---------------------------------
     const fetchChangeFullNameFunc = useCallback((fullName: string) => {
         dispatch(fetchChangeFullName({ fullName }));
+    }, [dispatch]);
+
+    const fetchChangeBioFunc = useCallback((bio: string) => {
+        dispatch(fetchChangeBio({ bio }));
     }, [dispatch]);
 
     const fetchChangeJobNameFunc = useCallback((jobName: string) => {
@@ -60,6 +62,7 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
 
     //---------------------------------
     const debouncedFetchChangeFullName = useDebounce(fetchChangeFullNameFunc, 300);
+    const debouncedFetchChangeBio = useDebounce(fetchChangeBioFunc, 300);
     const debouncedFetchChangeJobName = useDebounce(fetchChangeJobNameFunc, 300);
     const debouncedFetchChangeStatus = useDebounce(fetchChangeStatusFunc, 300);
     const debouncedFetchChangeEmail = useDebounce(fetchChangeEmailFunc, 300);
@@ -72,6 +75,13 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
             debouncedFetchChangeFullName(value);
         }
     }, [debouncedFetchChangeFullName, dispatch]);
+
+    const onChangeBio = useCallback((value: string) => {
+        if (value.length < 1024) {
+            dispatch(AdminMemberDetailsPageActions.setBio(value));
+            debouncedFetchChangeBio(value);
+        }
+    }, [debouncedFetchChangeBio, dispatch]);
 
     const onChangeJobName = useCallback((value: string) => {
         if (value.length < 128) {
@@ -237,6 +247,24 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
                     onChange={onChangePhone}
                 />
             </HStack>
+            <VStack
+                maxW
+                gap={20}
+            >
+                <Text
+                    theme={TextTheme.DARK2}
+                    size={TextSize.BODY_L_DESKTOP}
+                >
+                    {`${t('Биография')}:`}
+                </Text>
+                <TextArea
+                    value={member.bio || ''}
+                    theme={TextAreaTheme.DARK}
+                    size={TextAreaSize.BODY_DESKTOP}
+                    className={cls.bio}
+                    onChange={onChangeBio}
+                />
+            </VStack>
         </VStack>
     );
 });

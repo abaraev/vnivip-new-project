@@ -37,3 +37,10 @@
 .input {
     flex-grow: 1;
 }
+
+.bio {
+    min-height: 200px;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

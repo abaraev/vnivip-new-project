@@ -32,7 +32,7 @@ export const MemberTopMobile = memo((props: MemberTopMobileProps) => {
                     theme={TextTheme.DARK2}
                     size={TextSize.BODY_L_MEDIUM_MOBILE}
                     align={TextAlign.CENTER}
-                    className={cls.text}
+                    className={cls.fullName}
                 >
                     {data.fullName}
                 </Text>
@@ -40,7 +40,7 @@ export const MemberTopMobile = memo((props: MemberTopMobileProps) => {
                     theme={TextTheme.DARK}
                     size={TextSize.BODY_MOBILE}
                     align={TextAlign.CENTER}
-                    className={cls.text}
+                    className={cls.jobName}
                 >
                     {data.jobName}
                 </Text>
@@ -49,7 +49,7 @@ export const MemberTopMobile = memo((props: MemberTopMobileProps) => {
                 theme={TextTheme.BLUE}
                 size={TextSize.BODY_MEDIUM_MOBILE}
                 align={TextAlign.CENTER}
-                className={cls.text}
+                className={cls.status}
             >
                 {data.status}
             </Text>

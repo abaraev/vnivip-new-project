@@ -1,0 +1,12 @@
+.avatar {
+    height: 450px !important;
+    width: 300px !important;
+    box-shadow: 0 0 2px 0 var(--black);
+}
+
+.jobName,
+.status {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

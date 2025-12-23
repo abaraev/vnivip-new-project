@@ -43,6 +43,7 @@ export const MemberMobile = memo((props: MemberMobileProps) => {
             <VStack
                 className={cls.infoWrapper}
                 gap={30}
+                maxW
             >
                 <MemberTopMobile data={data} />
                 <MemberBottomMobile data={data} />

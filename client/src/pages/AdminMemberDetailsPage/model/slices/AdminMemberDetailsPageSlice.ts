@@ -27,6 +27,11 @@ export const AdminMemberDetailsPageSlice = createSlice({
                 state.member.fullName = action.payload;
             }
         },
+        setBio: (state, action: PayloadAction<string>) => {
+            if (state.member) {
+                state.member.bio = action.payload;
+            }
+        },
         setJobName: (state, action: PayloadAction<string>) => {
             if (state.member) {
                 state.member.jobName = action.payload;

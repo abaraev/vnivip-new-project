@@ -38,6 +38,7 @@ export const AdminMemberSmallTopDesktop = memo((props: AdminMemberSmallTopDeskto
                     <Text
                         theme={TextTheme.DARK2}
                         size={TextSize.BODY_DESKTOP}
+                        className={cls.jobName}
                     >
                         {data.jobName}
                     </Text>

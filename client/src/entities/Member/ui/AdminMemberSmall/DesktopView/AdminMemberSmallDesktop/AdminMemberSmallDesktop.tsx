@@ -5,8 +5,8 @@ import { HStack, VStack } from 'shared/ui/Stack';
 import { ButtonDesktop, ButtonDesktopTheme } from 'shared/ui/Button/DesktopView/ButtonDesktop';
 import { useTranslation } from 'react-i18next';
 import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
-import arrowLeftIcon from 'shared/assets/icons/arrow-left-28-28-blue.svg';
-import arrowRightIcon from 'shared/assets/icons/arrow-right-28-28-blue.svg';
+import arrowTopIcon from 'shared/assets/icons/arrow-up-32-32-blue.svg';
+import arrowBottomIcon from 'shared/assets/icons/arrow-down-32-32-blue.svg';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import close from 'shared/assets/icons/close-32-32-red.svg';
@@ -62,8 +62,8 @@ export const AdminMemberSmallDesktop = memo((props: AdminMemberSmallDesktopProps
             />
             {data.position > 0 && (
                 <Icon
-                    Svg={arrowLeftIcon}
-                    className={cls.arrowLeft}
+                    Svg={arrowTopIcon}
+                    className={cls.arrowTop}
                     theme={IconTheme.CLICKABLE_BG}
                     onClick={onPositionUpHandler}
                 />
@@ -94,8 +94,8 @@ export const AdminMemberSmallDesktop = memo((props: AdminMemberSmallDesktopProps
             </HStack>
             {membersLength - 1 > data.position && (
                 <Icon
-                    Svg={arrowRightIcon}
-                    className={cls.arrowRight}
+                    Svg={arrowBottomIcon}
+                    className={cls.arrowBottom}
                     theme={IconTheme.CLICKABLE_BG}
                     onClick={onPositionDownHandler}
                 />

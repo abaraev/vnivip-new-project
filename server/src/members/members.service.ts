@@ -16,6 +16,8 @@ import {ChangePhoneMemberDto} from "./dto/change-phone-member.dto";
 import {DeleteAvatarMemberDto} from "./dto/delete-avatar-member.dto";
 import {ChangeAvatarMemberDto} from "./dto/change-avatar-member.dto";
 import {DeleteMemberDto} from "./dto/delete-member.dto";
+import {ChangeBioMemberDto} from "./dto/change-bio-member.dto";
+import {JobSection} from "../types/JobSection";
 
 @Injectable()
 export class MembersService {
@@ -24,6 +26,10 @@ export class MembersService {
                 private fileService: FilesService) {}
 
     async create(dto: CreateMemberDto, files: { avatar?: Express.Multer.File[] }) {
+        if (dto.bio && dto.section !== JobSection.ADMINISTRATION) {
+            throw new HttpException('Bio is only in the administration section', HttpStatus.BAD_REQUEST);
+        }
+
         const avatar = files?.avatar?.[0];
 
         const data: CreateMemberDto = {
@@ -33,6 +39,7 @@ export class MembersService {
             section: dto.section,
             email: dto.email,
             phone: dto.phone,
+            bio: dto.bio,
         }
 
         const members = await this.membersRepository.findAll({ where: { section: data.section }});
@@ -132,6 +139,22 @@ export class MembersService {
         }
 
         await member.update({ fullName: dto.fullName });
+
+        return member;
+    }
+
+    async changeBio(dto: ChangeBioMemberDto) {
+        const member = await this.membersRepository.findOne({ where: { id: dto.memberId }});
+
+        if (!member) {
+            throw new HttpException('member not found', HttpStatus.BAD_REQUEST);
+        }
+
+        if (member.section !== JobSection.ADMINISTRATION) {
+            throw new HttpException('Bio is only in the administration section', HttpStatus.BAD_REQUEST);
+        }
+
+        await member.update({ bio: dto.bio });
 
         return member;
     }

@@ -4,6 +4,9 @@ import { HStack, VStack } from 'shared/ui/Stack';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Member } from 'entities/Member';
 import { useTranslation } from 'react-i18next';
+import { ButtonDesktop, ButtonDesktopTheme } from 'shared/ui/Button/DesktopView/ButtonDesktop';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useNavigate } from 'react-router-dom';
 import cls from './MemberBottomDesktop.module.scss';
 
 interface MemberBottomDesktopProps {
@@ -17,12 +20,14 @@ export const MemberBottomDesktop = memo((props: MemberBottomDesktopProps) => {
         data,
     } = props;
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     return (
-        <HStack
-            justify="end"
+        <VStack
+            align="end"
             maxW
             className={classNames(cls.MemberBottomDesktop, {}, [className])}
+            gap={20}
         >
             <VStack
                 gap={10}
@@ -60,6 +65,17 @@ export const MemberBottomDesktop = memo((props: MemberBottomDesktopProps) => {
                     </HStack>
                 )}
             </VStack>
-        </HStack>
+            <HStack
+                justify="end"
+                maxW
+            >
+                <ButtonDesktop
+                    theme={ButtonDesktopTheme.PRIMARY}
+                    onClick={() => navigate(`/member_details/${data.id}`)}
+                >
+                    {t('О сотруднике')}
+                </ButtonDesktop>
+            </HStack>
+        </VStack>
     );
 });

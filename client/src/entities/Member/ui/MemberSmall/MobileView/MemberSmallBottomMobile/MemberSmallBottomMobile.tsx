@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text';
 import { Member } from 'entities/Member';
 import { useTranslation } from 'react-i18next';
 import cls from './MemberSmallBottomMobile.module.scss';
@@ -30,13 +30,13 @@ export const MemberSmallBottomMobile = memo((props: MemberSmallBottomMobileProps
                 >
                     <Text
                         theme={TextTheme.GREY3}
-                        size={TextSize.BODY_MOBILE}
+                        size={TextSize.BODY_S_MOBILE}
                     >
                         {`${t('Номер телефона')}: `}
                     </Text>
                     <Text
                         theme={TextTheme.DARK2}
-                        size={TextSize.BODY_MOBILE}
+                        size={TextSize.BODY_S_MOBILE}
                     >
                         {data.phone}
                     </Text>
@@ -48,13 +48,13 @@ export const MemberSmallBottomMobile = memo((props: MemberSmallBottomMobileProps
                 >
                     <Text
                         theme={TextTheme.GREY3}
-                        size={TextSize.BODY_MOBILE}
+                        size={TextSize.BODY_S_MOBILE}
                     >
                         {`${t('Электронная почта')}: `}
                     </Text>
                     <Text
                         theme={TextTheme.DARK2}
-                        size={TextSize.BODY_MOBILE}
+                        size={TextSize.BODY_S_MOBILE}
                     >
                         {data.email}
                     </Text>
@@ -68,7 +68,8 @@ export const MemberSmallBottomMobile = memo((props: MemberSmallBottomMobileProps
                 >
                     <Text
                         theme={TextTheme.BLUE}
-                        size={TextSize.BODY_MOBILE}
+                        size={TextSize.BODY_S_MOBILE}
+                        align={TextAlign.RIGHT}
                     >
                         {data.status}
                     </Text>

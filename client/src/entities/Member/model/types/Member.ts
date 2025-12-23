@@ -19,4 +19,5 @@ export interface Member {
     phone?: string;
     avatar?: string;
     position: number;
+    bio?: string;
 }

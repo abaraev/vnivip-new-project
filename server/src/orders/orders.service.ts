@@ -92,7 +92,7 @@ export class OrdersService {
         }))
 
         try {
-            console.log('Начал отправлять письмо');
+
             await this.mailService.sendMail({
                 subject: `Заказ №${newOrder.id}, ВНИВИП | Услуги`,
                 text: '',
@@ -108,7 +108,7 @@ export class OrdersService {
                 },
                 attachments: attachments.length ? attachments : undefined,
             })
-            console.log('Закончил отправлять письмо');
+
             return newOrder;
         } catch (e) {
             throw new HttpException('mail error', HttpStatus.INTERNAL_SERVER_ERROR);

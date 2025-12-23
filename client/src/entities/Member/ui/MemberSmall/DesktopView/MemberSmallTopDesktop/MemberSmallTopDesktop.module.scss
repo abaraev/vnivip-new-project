@@ -3,3 +3,9 @@
     height: 150px !important;
     box-shadow: 0 0 1px 0 var(--black);
 }
+
+.jobName {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

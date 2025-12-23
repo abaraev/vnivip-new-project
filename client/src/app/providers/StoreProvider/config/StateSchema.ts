@@ -34,6 +34,7 @@ import { AdminCompetitionsPageSchema } from 'pages/AdminCompetitionsPage';
 import { AdminVacanciesPageSchema } from 'pages/AdminVacanciesPage';
 import { AdminRecentEventsPageSchema } from 'pages/AdminRecentEventsPage';
 import { AboutInstitutePageSchema } from 'pages/AboutInstitutePage';
+import { MemberDetailsPageSchema } from 'pages/MemberDetailsPage';
 
 export interface StateSchema {
     ui: UISchema;
@@ -68,6 +69,7 @@ export interface StateSchema {
     adminVacanciesPage?: AdminVacanciesPageSchema,
     adminRecentEventsPage?: AdminRecentEventsPageSchema,
     aboutInstitutePage?: AboutInstitutePageSchema,
+    memberDetailsPage?: MemberDetailsPageSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

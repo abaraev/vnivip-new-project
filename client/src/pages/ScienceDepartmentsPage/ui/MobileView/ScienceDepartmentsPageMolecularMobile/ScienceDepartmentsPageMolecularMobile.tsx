@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { MemberSmallMobile } from 'entities/Member';
 import { getScienceDepartmentsPageMembersMolecular } from '../../../model/selectors/getScienceDepartmentsPage';
@@ -31,7 +31,7 @@ export const ScienceDepartmentsPageMolecularMobile = memo((props: ScienceDepartm
             >
                 {t('Отдел молекулярно-генетических исследований')}
             </Text>
-            {!!members?.length && (
+            {members?.length ? (
                 <VStack
                     maxW
                     gap={32}
@@ -43,7 +43,23 @@ export const ScienceDepartmentsPageMolecularMobile = memo((props: ScienceDepartm
                         />
                     ))}
                 </VStack>
-            )}
+            )
+                : (
+                    <HStack
+                        maxW
+                        justify="center"
+                        align="center"
+                        paddingT={30}
+                        paddingB={30}
+                    >
+                        <Text
+                            theme={TextTheme.GREY}
+                            size={TextSize.BODY_L_MEDIUM_MOBILE}
+                        >
+                            {t('Нет сотрудников')}
+                        </Text>
+                    </HStack>
+                )}
         </VStack>
     );
 });

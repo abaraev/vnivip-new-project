@@ -16,7 +16,7 @@
   "Недопустимый электронный адрес почты": "Invalid email address",
   "Корзина пуста": "The cart is empty",
   "заказ принят": "Your order has been accepted! Your order number - №{{orderNumber}}. Expect feedback.",
-    "Комментарий": "Комментарий",
-    "Загрузить файл": "Загрузить файл",
-  "Прикрепить файл": "Прикрепить файл"
+    "Комментарий": "Comment",
+    "Загрузить файл": "Upload file",
+  "Прикрепить файл": "Attach a file"
 }

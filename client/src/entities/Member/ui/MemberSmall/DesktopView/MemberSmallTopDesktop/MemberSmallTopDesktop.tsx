@@ -40,6 +40,7 @@ export const MemberSmallTopDesktop = memo((props: MemberSmallTopDesktopProps) =>
                     <Text
                         theme={TextTheme.DARK2}
                         size={TextSize.BODY_DESKTOP}
+                        className={cls.jobName}
                     >
                         {data.jobName}
                     </Text>

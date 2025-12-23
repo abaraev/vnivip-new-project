@@ -37,6 +37,7 @@ export const MemberTopDesktop = memo((props: MemberTopDesktopProps) => {
                 <Text
                     theme={TextTheme.DARK}
                     size={isSmallScreen ? TextSize.BODY_S_DESKTOP : TextSize.BODY_DESKTOP}
+                    className={cls.jobName}
                 >
                     {data.jobName}
                 </Text>
@@ -44,6 +45,7 @@ export const MemberTopDesktop = memo((props: MemberTopDesktopProps) => {
             <Text
                 theme={TextTheme.BLUE}
                 size={isSmallScreen ? TextSize.BODY_S_MEDIUM_DESKTOP : TextSize.BODY_MEDIUM_DESKTOP}
+                className={cls.status}
             >
                 {data.status}
             </Text>

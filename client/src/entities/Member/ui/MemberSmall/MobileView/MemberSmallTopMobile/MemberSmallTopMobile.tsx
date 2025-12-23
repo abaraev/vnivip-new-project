@@ -21,38 +21,43 @@ export const MemberSmallTopMobile = memo((props: MemberSmallTopMobileProps) => {
     } = props;
 
     return (
-        <HStack
+        <VStack
             className={classNames(cls.MemberSmallTopMobile, {}, [className])}
             justify="between"
             maxW
+            gap={10}
         >
-            <ImageDesktop
-                src={data.avatar
-                    ? `${__API__}/static/images/${data.avatar}`
-                    : defaultAvatar}
-                className={cls.image}
-                borderR={10}
-            />
+            <HStack
+                maxW
+                justify="center"
+            >
+                <ImageDesktop
+                    src={data.avatar
+                        ? `${__API__}/static/images/${data.avatar}`
+                        : defaultAvatar}
+                    className={cls.image}
+                    borderR={10}
+                />
+            </HStack>
             <VStack
                 gap={10}
             >
                 {data.jobName && (
                     <Text
                         theme={TextTheme.DARK2}
-                        size={TextSize.BODY_L_MOBILE}
-                        align={TextAlign.CENTER}
+                        size={TextSize.BODY_MOBILE}
+                        className={cls.jobName}
                     >
                         {data.jobName}
                     </Text>
                 )}
                 <Text
                     theme={TextTheme.GREY3}
-                    size={TextSize.BODY_MOBILE}
-                    align={TextAlign.CENTER}
+                    size={TextSize.BODY_S_MOBILE}
                 >
                     {data.fullName}
                 </Text>
             </VStack>
-        </HStack>
+        </VStack>
     );
 });
