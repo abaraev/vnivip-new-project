@@ -10,6 +10,7 @@ import { FileInput } from 'shared/ui/FileInput/FileInput';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { MemberSections } from 'entities/Member';
 import { TextArea, TextAreaSize, TextAreaTheme } from 'shared/ui/TextArea/TextArea';
 import { fetchChangeEmail } from '../../../model/services/fetchChangeEmail';
 import { fetchChangePhone } from '../../../model/services/fetchChangePhone';
@@ -247,24 +248,26 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
                     onChange={onChangePhone}
                 />
             </HStack>
-            <VStack
-                maxW
-                gap={20}
-            >
-                <Text
-                    theme={TextTheme.DARK2}
-                    size={TextSize.BODY_L_DESKTOP}
+            {member.section === MemberSections.ADMINISTRATION && (
+                <VStack
+                    maxW
+                    gap={20}
                 >
-                    {`${t('Биография')}:`}
-                </Text>
-                <TextArea
-                    value={member.bio || ''}
-                    theme={TextAreaTheme.DARK}
-                    size={TextAreaSize.BODY_DESKTOP}
-                    className={cls.bio}
-                    onChange={onChangeBio}
-                />
-            </VStack>
+                    <Text
+                        theme={TextTheme.DARK2}
+                        size={TextSize.BODY_L_DESKTOP}
+                    >
+                        {`${t('Биография')}:`}
+                    </Text>
+                    <TextArea
+                        value={member.bio || ''}
+                        theme={TextAreaTheme.DARK}
+                        size={TextAreaSize.BODY_DESKTOP}
+                        className={cls.bio}
+                        onChange={onChangeBio}
+                    />
+                </VStack>
+            )}
         </VStack>
     );
 });

@@ -90,7 +90,7 @@ export const AdminMembersPageToxicologyDesktop = memo((props: AdminMembersPageTo
             {!!membersToxicology?.length && isOpenSection && (
                 <HStack
                     maxW
-                    gap={60}
+                    gap={70}
                     wrap="wrap"
                 >
                     {membersToxicology?.map((member, index) => (
