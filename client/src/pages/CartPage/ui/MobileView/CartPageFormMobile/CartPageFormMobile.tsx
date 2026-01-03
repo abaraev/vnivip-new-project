@@ -207,7 +207,7 @@ export const CartPageFormMobile = memo((props: CartPageFormMobileProps) => {
                     <FileInput
                         accept=".xlsx, .xls, .doc, .docx, .txt, .pdf"
                         onChange={onAddDocument}
-                        disabled={documents.length > 6}
+                        disabled={documents.length >= 6}
                     >
                         {t('Прикрепить файл')}
                     </FileInput>

@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { memo, useCallback, useState } from 'react';
+import React, {
+    memo, useCallback, useMemo, useState,
+} from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
 import {
     Text, TextAlign, TextSize, TextTheme,
@@ -7,6 +9,9 @@ import {
 import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
 import arrowDownIcon from 'shared/assets/icons/arrow-down-64-64-black.svg';
 import close from 'shared/assets/icons/close-32-32-red.svg';
+import pack from 'shared/assets/icons/pack-32-32-black.svg';
+import undo from 'shared/assets/icons/undo-32-32-black.svg';
+import { SmallDocumentDesktop, Document } from 'entities/Document';
 import cls from './AdminCompetitionDesktop.module.scss';
 import { Competition } from '../../../model/types/Competition';
 
@@ -14,6 +19,8 @@ interface AdminCompetitionDesktopProps {
     className?: string;
     data: Competition;
     onDelete?: (competitionIndex: number, competitionId: number) => void;
+    onClose?: (competitionIndex: number, competitionId: number) => void;
+    onOpen?: (competitionIndex: number, competitionId: number) => void;
     competitionIndex: number;
 }
 
@@ -22,8 +29,11 @@ export const AdminCompetitionDesktop = memo((props: AdminCompetitionDesktopProps
         className,
         data,
         onDelete,
+        onClose,
+        onOpen,
         competitionIndex,
     } = props;
+    const documents = data.documents ? JSON.parse(data.documents) as Document[] : [] as Document[];
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -33,6 +43,14 @@ export const AdminCompetitionDesktop = memo((props: AdminCompetitionDesktopProps
 
     const onDeleteHandler = () => {
         onDelete?.(competitionIndex, data.id);
+    };
+
+    const onCloseHandler = () => {
+        onClose?.(competitionIndex, data.id);
+    };
+
+    const onOpenHandler = () => {
+        onOpen?.(competitionIndex, data.id);
     };
 
     return (
@@ -45,6 +63,23 @@ export const AdminCompetitionDesktop = memo((props: AdminCompetitionDesktopProps
                 className={cls.deleteBtn}
                 onClick={onDeleteHandler}
             />
+            {data.closed
+                ? (
+                    <Icon
+                        theme={IconTheme.CLICKABLE_BG}
+                        Svg={undo}
+                        className={cls.closedToggleBtn}
+                        onClick={onOpenHandler}
+                    />
+                )
+                : (
+                    <Icon
+                        theme={IconTheme.CLICKABLE_BG}
+                        Svg={pack}
+                        className={cls.closedToggleBtn}
+                        onClick={onCloseHandler}
+                    />
+                )}
             <HStack
                 maxW
                 justify="between"
@@ -65,14 +100,36 @@ export const AdminCompetitionDesktop = memo((props: AdminCompetitionDesktopProps
                     className={classNames(cls.arrowIcon, { [cls.arrowIsOpen]: isOpen }, [])}
                 />
             </HStack>
-            <Text
-                theme={TextTheme.DARK}
-                size={TextSize.BODY_DESKTOP}
-                className={cls.description}
-                align={TextAlign.JUSTIFY}
+            <VStack
+                className={cls.descriptionWrapper}
+                maxW
             >
-                {data.description || ''}
-            </Text>
+                <Text
+                    theme={TextTheme.DARK}
+                    size={TextSize.BODY_DESKTOP}
+                    align={TextAlign.JUSTIFY}
+                    className={cls.description}
+                >
+                    {data.description || ''}
+                </Text>
+                {!!documents.length && (
+                    <HStack
+                        maxW
+                        className={cls.documentsWrapper}
+                        wrap="wrap"
+                        gap={20}
+                    >
+                        {documents.map((item) => (
+                            <SmallDocumentDesktop
+                                data={item}
+                                key={item.id}
+                                className={cls.document}
+                                withDeleting={false}
+                            />
+                        ))}
+                    </HStack>
+                )}
+            </VStack>
         </VStack>
     );
 });

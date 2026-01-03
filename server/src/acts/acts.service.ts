@@ -7,6 +7,8 @@ import {CreateDocumentResult} from "../files/types/create-document-result";
 import {DeleteActDto} from "./dto/delete-act.dto";
 import {actTypes} from "./types/actTypes";
 import {Op, or, Sequelize} from "sequelize";
+import {CreateActOrderDto} from "./dto/create-act-order.dto";
+import {CreateActCompetitionDto} from "./dto/create-act-competition.dto";
 
 @Injectable()
 export class ActsService {
@@ -32,7 +34,7 @@ export class ActsService {
         return act;
     }
 
-    async createForOrder(dto: CreateActDto, files: { staticFile?: Express.Multer.File[] }) {
+    async createForOrder(dto: CreateActOrderDto, files: { staticFile?: Express.Multer.File[] }) {
         const staticFile = files?.staticFile?.[0];
 
         if (!staticFile) {
@@ -46,6 +48,25 @@ export class ActsService {
             staticFile: savedFile.staticPath,
             size: savedFile.size,
             type: actTypes.ORDER,
+        })
+
+        return act;
+    }
+
+    async createForCompetition(dto: CreateActCompetitionDto, files: { staticFile?: Express.Multer.File[] }) {
+        const staticFile = files?.staticFile?.[0];
+
+        if (!staticFile) {
+            throw new HttpException('staticFile is required', HttpStatus.BAD_REQUEST)
+        }
+
+        const savedFile: CreateDocumentResult = await this.fileService.createDocument(staticFile);
+
+        const act = await this.actsRepository.create({
+            name: savedFile.name,
+            staticFile: savedFile.staticPath,
+            size: savedFile.size,
+            type: actTypes.COMPETITION,
         })
 
         return act;

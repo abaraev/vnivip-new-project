@@ -17,7 +17,7 @@ export const fetchDeleteCompetition = createAsyncThunk<
     FetchDeleteCompetitionArgs,
     ThunkConfig<any>
 >(
-    'pages/AdminCompetitionsDetailsPage/fetchDeleteVacancy',
+    'pages/AdminCompetitionsDetailsPage/fetchDeleteCompetition',
     async ({
         competitionIndex, competitionId,
     }, thunkApi) => {

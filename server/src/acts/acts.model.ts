@@ -1,10 +1,11 @@
 import {Column, DataType, Model, Table} from "sequelize-typescript";
+import {actTypes} from "./types/actTypes";
 
 interface actCreationAttrs {
     staticFile: string;
     name: string;
     size: number;
-    type: string;
+    type: actTypes;
 }
 
 @Table({tableName: 'acts'})

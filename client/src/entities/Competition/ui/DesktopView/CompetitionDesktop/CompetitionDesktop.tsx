@@ -1,11 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from 'shared/ui/Text/Text';
 import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
 import arrowDownIcon from 'shared/assets/icons/arrow-down-64-64-black.svg';
+import { Document, SmallDocumentDesktop } from 'entities/Document';
 import cls from './CompetitionDesktop.module.scss';
 import { Competition } from '../../../model/types/Competition';
 
@@ -19,6 +20,7 @@ export const CompetitionDesktop = memo((props: CompetitionDesktopProps) => {
         className,
         data,
     } = props;
+    const documents = data.documents ? JSON.parse(data.documents) as Document[] : [] as Document[];
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -50,14 +52,36 @@ export const CompetitionDesktop = memo((props: CompetitionDesktopProps) => {
                     className={classNames(cls.arrowIcon, { [cls.arrowIsOpen]: isOpen }, [])}
                 />
             </HStack>
-            <Text
-                theme={TextTheme.DARK}
-                size={TextSize.BODY_DESKTOP}
-                className={cls.description}
-                align={TextAlign.JUSTIFY}
+            <VStack
+                className={cls.descriptionWrapper}
+                maxW
             >
-                {data.description || ''}
-            </Text>
+                <Text
+                    theme={TextTheme.DARK}
+                    size={TextSize.BODY_DESKTOP}
+                    align={TextAlign.JUSTIFY}
+                    className={cls.description}
+                >
+                    {data.description || ''}
+                </Text>
+                {!!documents.length && (
+                    <HStack
+                        maxW
+                        className={cls.documentsWrapper}
+                        wrap="wrap"
+                        gap={20}
+                    >
+                        {documents.map((item) => (
+                            <SmallDocumentDesktop
+                                data={item}
+                                key={item.id}
+                                className={cls.document}
+                                withDeleting={false}
+                            />
+                        ))}
+                    </HStack>
+                )}
+            </VStack>
         </VStack>
     );
 });

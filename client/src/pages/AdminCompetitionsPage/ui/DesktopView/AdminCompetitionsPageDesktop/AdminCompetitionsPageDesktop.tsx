@@ -12,6 +12,12 @@ import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { AdminCompetitionDesktop } from 'entities/Competition';
 import { TextArea, TextAreaSize, TextAreaTheme } from 'shared/ui/TextArea/TextArea';
+import { FileInput } from 'shared/ui/FileInput/FileInput';
+import { SmallDocumentDesktop } from 'entities/Document';
+import { fetchCloseCompetition } from '../../../model/services/fetchCloseCompetition';
+import { fetchOpenCompetition } from '../../../model/services/fetchOpenCompetition';
+import { fetchDeleteDocument } from '../../../model/services/fetctDeleteDocument';
+import { fetchAddDocument } from '../../../model/services/fetchAddDocument';
 import { fetchDeleteCompetition } from '../../../model/services/fetchDeleteCompetition';
 import { fetchAddCompetition } from '../../../model/services/fetchAddCompetition';
 import { fetchCompetitions } from '../../../model/services/fetchCompetitions';
@@ -21,9 +27,11 @@ import {
 } from '../../../model/slices/AdminCompetitionsPageSlice';
 import {
     getAdminCompetitionsPageAddingCompetitionDescription,
+    getAdminCompetitionsPageAddingCompetitionDocuments,
     getAdminCompetitionsPageAddingCompetitionName,
-    getAdminCompetitionsPageCompetitions,
+    getAdminCompetitionsPageClosedCompetitions,
     getAdminCompetitionsPageInited,
+    getAdminCompetitionsPageOpenedCompetitions,
 } from '../../../model/selectors/getAdminCompetitionsPage';
 import cls from './AdminCompetitionsPageDesktop.module.scss';
 
@@ -42,9 +50,11 @@ const AdminCompetitionsPageDesktop = memo((props: AdminCompetitionsPageDesktopPr
     const dispatch = useAppDispatch();
     const { t } = useTranslation('admin');
     const inited = useSelector(getAdminCompetitionsPageInited);
-    const competitions = useSelector(getAdminCompetitionsPageCompetitions);
+    const closedCompetitions = useSelector(getAdminCompetitionsPageClosedCompetitions);
+    const openedCompetitions = useSelector(getAdminCompetitionsPageOpenedCompetitions);
     const addingCompetitionName = useSelector(getAdminCompetitionsPageAddingCompetitionName);
     const addingCompetitionDescription = useSelector(getAdminCompetitionsPageAddingCompetitionDescription);
+    const addingCompetitionDocuments = useSelector(getAdminCompetitionsPageAddingCompetitionDocuments);
     const [isOpenAddCompetitionModal, bindAddCompetitionModal] = useModal();
 
     useEffect(() => {
@@ -82,6 +92,28 @@ const AdminCompetitionsPageDesktop = memo((props: AdminCompetitionsPageDesktopPr
             competitionIndex,
             competitionId,
         }));
+    }, [dispatch]);
+
+    const onAddDocument = useCallback((file: File) => {
+        if (file.type.includes('document') || file.type.includes('pdf') || file.type.includes('text')) {
+            if (file.size < 50 * 1024 * 1024) {
+                dispatch(fetchAddDocument({ file }));
+            } else {
+                alert('Максимальный размер документа 50 МБ.');
+            }
+        }
+    }, [dispatch]);
+
+    const onDeleteAct = useCallback((documentId: number) => {
+        dispatch(fetchDeleteDocument({ documentId }));
+    }, [dispatch]);
+
+    const onCloseCompetition = useCallback((competitionIndex: number, competitionId: number) => {
+        dispatch(fetchCloseCompetition({ competitionIndex, competitionId }));
+    }, [dispatch]);
+
+    const onOpenCompetition = useCallback((competitionIndex: number, competitionId: number) => {
+        dispatch(fetchOpenCompetition({ competitionIndex, competitionId }));
     }, [dispatch]);
 
     return (
@@ -148,6 +180,40 @@ const AdminCompetitionsPageDesktop = memo((props: AdminCompetitionsPageDesktopPr
                                     onChange={onChangeAddingCompetitionDescription}
                                 />
                             </VStack>
+
+                            <VStack
+                                maxW
+                                gap={40}
+                            >
+                                <HStack
+                                    maxW
+                                    justify="center"
+                                >
+                                    <FileInput
+                                        accept=".xlsx, .xls, .doc, .docx, .txt, .pdf"
+                                        onChange={onAddDocument}
+                                        disabled={addingCompetitionDocuments.length >= 6}
+                                    >
+                                        {t('Прикрепить файл')}
+                                    </FileInput>
+                                </HStack>
+                                <HStack
+                                    maxW
+                                    wrap="wrap"
+                                    gap={20}
+                                    justify="center"
+                                >
+                                    {addingCompetitionDocuments.map((item) => (
+                                        <SmallDocumentDesktop
+                                            data={item}
+                                            key={item.id}
+                                            className={cls.document}
+                                            onDelete={onDeleteAct}
+                                        />
+                                    ))}
+                                </HStack>
+                            </VStack>
+
                             <ButtonDesktop
                                 theme={ButtonDesktopTheme.PRIMARY}
                                 className={!addingCompetitionName || !addingCompetitionDescription ? cls.btnDisabled : undefined}
@@ -158,19 +224,93 @@ const AdminCompetitionsPageDesktop = memo((props: AdminCompetitionsPageDesktopPr
                         </VStack>
                     </Modal>
                 </HStack>
-                <HStack
+                <VStack
                     maxW
-                    gap={30}
-                    wrap="wrap"
+                    gap={20}
                 >
-                    {competitions?.map((competition, index) => (
-                        <AdminCompetitionDesktop
-                            data={competition}
-                            onDelete={onDelete}
-                            competitionIndex={index}
-                        />
-                    ))}
-                </HStack>
+                    <Text
+                        theme={TextTheme.DARK2}
+                        size={TextSize.BODY_L_MEDIUM_DESKTOP}
+                    >
+                        {t('Открытые конкурсы')}
+                    </Text>
+                    {openedCompetitions?.length ? (
+                        <VStack
+                            maxW
+                            gap={30}
+                        >
+                            {openedCompetitions?.map((competition, index) => (
+                                <AdminCompetitionDesktop
+                                    data={competition}
+                                    onDelete={onDelete}
+                                    competitionIndex={index}
+                                    onClose={onCloseCompetition}
+                                    key={competition.id}
+                                />
+                            ))}
+                        </VStack>
+                    )
+                        : (
+                            <HStack
+                                maxW
+                                justify="center"
+                                align="center"
+                                paddingT={50}
+                                paddingB={50}
+                            >
+                                <Text
+                                    theme={TextTheme.GREY}
+                                    size={TextSize.BODY_L_MEDIUM_DESKTOP}
+                                >
+                                    {t('Нет конкурсов')}
+                                </Text>
+                            </HStack>
+                        )}
+                </VStack>
+
+                <VStack
+                    maxW
+                    gap={20}
+                >
+                    <Text
+                        theme={TextTheme.DARK2}
+                        size={TextSize.BODY_L_MEDIUM_DESKTOP}
+                    >
+                        {t('Закрытые конкурсы')}
+                    </Text>
+                    {closedCompetitions?.length ? (
+                        <VStack
+                            maxW
+                            gap={30}
+                        >
+                            {closedCompetitions?.map((competition, index) => (
+                                <AdminCompetitionDesktop
+                                    data={competition}
+                                    onDelete={onDelete}
+                                    competitionIndex={index}
+                                    onOpen={onOpenCompetition}
+                                    key={competition.id}
+                                />
+                            ))}
+                        </VStack>
+                    )
+                        : (
+                            <HStack
+                                maxW
+                                justify="center"
+                                align="center"
+                                paddingT={50}
+                                paddingB={50}
+                            >
+                                <Text
+                                    theme={TextTheme.GREY}
+                                    size={TextSize.BODY_L_MEDIUM_DESKTOP}
+                                >
+                                    {t('Нет конкурсов')}
+                                </Text>
+                            </HStack>
+                        )}
+                </VStack>
             </VStack>
         </DynamicModuleLoader>
     );

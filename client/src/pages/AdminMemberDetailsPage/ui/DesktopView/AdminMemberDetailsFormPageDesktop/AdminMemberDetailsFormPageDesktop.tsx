@@ -248,26 +248,24 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
                     onChange={onChangePhone}
                 />
             </HStack>
-            {member.section === MemberSections.ADMINISTRATION && (
-                <VStack
-                    maxW
-                    gap={20}
+            <VStack
+                maxW
+                gap={20}
+            >
+                <Text
+                    theme={TextTheme.DARK2}
+                    size={TextSize.BODY_L_DESKTOP}
                 >
-                    <Text
-                        theme={TextTheme.DARK2}
-                        size={TextSize.BODY_L_DESKTOP}
-                    >
-                        {`${t('Биография')}:`}
-                    </Text>
-                    <TextArea
-                        value={member.bio || ''}
-                        theme={TextAreaTheme.DARK}
-                        size={TextAreaSize.BODY_DESKTOP}
-                        className={cls.bio}
-                        onChange={onChangeBio}
-                    />
-                </VStack>
-            )}
+                    {`${t('Биография')}:`}
+                </Text>
+                <TextArea
+                    value={member.bio || ''}
+                    theme={TextAreaTheme.DARK}
+                    size={TextAreaSize.BODY_DESKTOP}
+                    className={cls.bio}
+                    onChange={onChangeBio}
+                />
+            </VStack>
         </VStack>
     );
 });

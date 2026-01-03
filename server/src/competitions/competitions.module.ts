@@ -4,6 +4,7 @@ import {CompetitionsService} from './competitions.service';
 import {SequelizeModule} from "@nestjs/sequelize";
 import {Competition} from "./competitions.model";
 import {AuthModule} from "../auth/auth.module";
+import {FilesModule} from "../files/files.module";
 
 @Module({
   controllers: [CompetitionsController],
@@ -11,6 +12,7 @@ import {AuthModule} from "../auth/auth.module";
   imports: [
       SequelizeModule.forFeature([Competition]),
       forwardRef(() => AuthModule),
+      FilesModule
   ],
   exports: [
       CompetitionsService,

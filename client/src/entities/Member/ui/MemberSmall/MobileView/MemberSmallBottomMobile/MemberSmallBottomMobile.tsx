@@ -1,9 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
-import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from 'shared/ui/Text/Text';
 import { Member } from 'entities/Member';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { ButtonMobile, ButtonMobileTheme } from 'shared/ui/Button/MobileView/ButtonMobile';
 import cls from './MemberSmallBottomMobile.module.scss';
 
 interface MemberSmallBottomMobileProps {
@@ -17,6 +21,7 @@ export const MemberSmallBottomMobile = memo((props: MemberSmallBottomMobileProps
         data,
     } = props;
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     return (
         <VStack
@@ -75,6 +80,18 @@ export const MemberSmallBottomMobile = memo((props: MemberSmallBottomMobileProps
                     </Text>
                 </HStack>
             )}
+            <HStack
+                justify="end"
+                maxW
+                paddingT={8}
+            >
+                <ButtonMobile
+                    theme={ButtonMobileTheme.PRIMARY}
+                    onClick={() => navigate(`/member_details/${data.id}`)}
+                >
+                    {t('О сотруднике')}
+                </ButtonMobile>
+            </HStack>
         </VStack>
     );
 });

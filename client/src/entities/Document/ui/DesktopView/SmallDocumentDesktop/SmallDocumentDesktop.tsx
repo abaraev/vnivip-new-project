@@ -12,6 +12,7 @@ interface SmallDocumentDesktopProps {
     className?: string;
     data: Document;
     onDelete?: (documentId: number) => void;
+    withDeleting?: boolean;
 }
 
 export const SmallDocumentDesktop = memo((props: SmallDocumentDesktopProps) => {
@@ -19,36 +20,46 @@ export const SmallDocumentDesktop = memo((props: SmallDocumentDesktopProps) => {
         className,
         data,
         onDelete,
+        withDeleting = true,
     } = props;
 
     const onDeleteHandler = () => {
-        onDelete?.(data.id);
+        if (withDeleting) {
+            onDelete?.(data.id);
+        }
     };
 
     return (
         <HStack
             className={classNames(cls.SmallDocumentDesktop, {}, [className])}
-            gap={10}
-            padding={10}
-            align="center"
         >
-            <Icon
-                theme={IconTheme.CLICKABLE_BG}
-                Svg={close}
-                className={cls.deleteBtn}
-                onClick={onDeleteHandler}
-            />
-            <Icon
-                theme={IconTheme.CLEAN}
-                Svg={documentIcon}
-            />
-            <Text
-                theme={TextTheme.DARK2}
-                size={TextSize.BODY_S_DESKTOP}
-                className={cls.name}
+            {withDeleting && (
+                <Icon
+                    theme={IconTheme.CLICKABLE_BG}
+                    Svg={close}
+                    className={cls.deleteBtn}
+                    onClick={onDeleteHandler}
+                />
+            )}
+            <a
+                className={cls.content}
+                href={`${__API__}/static/documents/${data.staticFile}`}
+                download={data.name}
+                target="_blank"
+                rel="noreferrer"
             >
-                {data.name}
-            </Text>
+                <Icon
+                    theme={IconTheme.CLEAN}
+                    Svg={documentIcon}
+                />
+                <Text
+                    theme={TextTheme.DARK2}
+                    size={TextSize.BODY_S_DESKTOP}
+                    className={cls.name}
+                >
+                    {data.name}
+                </Text>
+            </a>
         </HStack>
     );
 });

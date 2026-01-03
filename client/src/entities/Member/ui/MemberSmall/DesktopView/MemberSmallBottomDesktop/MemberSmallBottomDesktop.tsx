@@ -1,9 +1,13 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {memo} from 'react';
-import {HStack, VStack} from 'shared/ui/Stack';
-import {Text, TextAlign, TextSize, TextTheme,} from 'shared/ui/Text/Text';
-import {Member} from 'entities/Member';
-import {useTranslation} from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
+import { HStack, VStack } from 'shared/ui/Stack';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from 'shared/ui/Text/Text';
+import { Member } from 'entities/Member';
+import { useTranslation } from 'react-i18next';
+import { ButtonDesktop, ButtonDesktopTheme } from 'shared/ui/Button/DesktopView/ButtonDesktop';
+import { useNavigate } from 'react-router-dom';
 import cls from './MemberSmallBottomDesktop.module.scss';
 
 interface MemberSmallBottomDesktopProps {
@@ -17,6 +21,7 @@ export const MemberSmallBottomDesktop = memo((props: MemberSmallBottomDesktopPro
         data,
     } = props;
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     return (
         <VStack
@@ -75,6 +80,18 @@ export const MemberSmallBottomDesktop = memo((props: MemberSmallBottomDesktopPro
                     </Text>
                 </HStack>
             )}
+            <HStack
+                justify="end"
+                maxW
+                paddingT={10}
+            >
+                <ButtonDesktop
+                    theme={ButtonDesktopTheme.PRIMARY}
+                    onClick={() => navigate(`/member_details/${data.id}`)}
+                >
+                    {t('О сотруднике')}
+                </ButtonDesktop>
+            </HStack>
         </VStack>
     );
 });

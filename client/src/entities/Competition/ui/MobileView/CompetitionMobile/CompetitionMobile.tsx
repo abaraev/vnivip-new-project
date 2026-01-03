@@ -1,11 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from 'shared/ui/Text/Text';
 import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
 import arrowDownIcon from 'shared/assets/icons/arrow-down-34-34-black.svg';
+import { Document, SmallDocumentMobile } from 'entities/Document';
 import cls from './CompetitionMobile.module.scss';
 import { Competition } from '../../../model/types/Competition';
 
@@ -19,6 +20,7 @@ export const CompetitionMobile = memo((props: CompetitionMobileProps) => {
         className,
         data,
     } = props;
+    const documents = data.documents ? JSON.parse(data.documents) as Document[] : [] as Document[];
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -29,16 +31,18 @@ export const CompetitionMobile = memo((props: CompetitionMobileProps) => {
     return (
         <VStack
             className={classNames(cls.CompetitionMobile, { [cls.descriptionVisible]: isOpen }, [className])}
-            onClick={onToggle}
         >
             <HStack
                 maxW
                 justify="between"
                 align="center"
+                padding={10}
+                className={cls.contentWrapper}
+                onClick={onToggle}
             >
                 <Text
                     theme={TextTheme.DARK2}
-                    size={TextSize.H3_MEDIUM_MOBILE}
+                    size={TextSize.BODY_L_MEDIUM_MOBILE}
                 >
                     {data.name}
                 </Text>
@@ -48,14 +52,35 @@ export const CompetitionMobile = memo((props: CompetitionMobileProps) => {
                     className={classNames(cls.arrowIcon, { [cls.arrowIsOpen]: isOpen }, [])}
                 />
             </HStack>
-            <Text
-                theme={TextTheme.DARK}
-                size={TextSize.BODY_MOBILE}
-                className={cls.description}
-                align={TextAlign.JUSTIFY}
+            <VStack
+                className={cls.descriptionWrapper}
+                maxW
             >
-                {data.description}
-            </Text>
+                <Text
+                    theme={TextTheme.DARK}
+                    size={TextSize.BODY_MOBILE}
+                    align={TextAlign.JUSTIFY}
+                    className={cls.description}
+                >
+                    {data.description || ''}
+                </Text>
+                {!!documents.length && (
+                    <VStack
+                        maxW
+                        className={cls.documentsWrapper}
+                        gap={10}
+                    >
+                        {documents.map((item) => (
+                            <SmallDocumentMobile
+                                data={item}
+                                key={item.id}
+                                className={cls.document}
+                                withDeleting={false}
+                            />
+                        ))}
+                    </VStack>
+                )}
+            </VStack>
         </VStack>
     );
 });

@@ -26,10 +26,6 @@ export class MembersService {
                 private fileService: FilesService) {}
 
     async create(dto: CreateMemberDto, files: { avatar?: Express.Multer.File[] }) {
-        if (dto.bio && dto.section !== JobSection.ADMINISTRATION) {
-            throw new HttpException('Bio is only in the administration section', HttpStatus.BAD_REQUEST);
-        }
-
         const avatar = files?.avatar?.[0];
 
         const data: CreateMemberDto = {
@@ -148,10 +144,6 @@ export class MembersService {
 
         if (!member) {
             throw new HttpException('member not found', HttpStatus.BAD_REQUEST);
-        }
-
-        if (member.section !== JobSection.ADMINISTRATION) {
-            throw new HttpException('Bio is only in the administration section', HttpStatus.BAD_REQUEST);
         }
 
         await member.update({ bio: dto.bio });

@@ -6,6 +6,7 @@ import {DocumentValidationPipe} from "../pipes/document-validation.pipe";
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {DeleteActDto} from "./dto/delete-act.dto";
 import {CreateActOrderDto} from "./dto/create-act-order.dto";
+import {CreateActCompetitionDto} from "./dto/create-act-competition.dto";
 
 @Controller('acts')
 export class ActsController {
@@ -38,6 +39,20 @@ export class ActsController {
                }),
            ) files: { staticFile?: Express.Multer.File[] }) {
         return this.actsService.createForOrder(dto, files);
+    }
+
+    @Post('competition')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'staticFile', maxCount: 1 },
+    ]))
+    createForCompetition(@Body() dto: CreateActCompetitionDto,
+                   @UploadedFiles(
+                       new DocumentValidationPipe({
+                           maxSize: 50,
+                           fieldName: 'staticFile',
+                       }),
+                   ) files: { staticFile?: Express.Multer.File[] }) {
+        return this.actsService.createForCompetition(dto, files);
     }
 
     @UseGuards(JwtAuthGuard)

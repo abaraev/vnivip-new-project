@@ -6,7 +6,8 @@ import { fetchCompetitions } from '../services/fetchCompetitions';
 const initialState: CompetitionsPageSchema = {
     isLoading: false,
     error: undefined,
-    competitions: [],
+    openedCompetitions: [],
+    closedCompetitions: [],
     _inited: false,
 };
 
@@ -25,7 +26,8 @@ export const CompetitionsPageSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(fetchCompetitions.fulfilled, (state, action: PayloadAction<Competition[]>) => {
-                state.competitions = action.payload;
+                state.openedCompetitions = action.payload.filter((competition) => !competition.closed);
+                state.closedCompetitions = action.payload.filter((competition) => competition.closed);
                 state.isLoading = false;
             })
             .addCase(fetchCompetitions.rejected, (state, action) => {
