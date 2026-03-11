@@ -105,6 +105,7 @@ export class NewsController {
         return this.newsService.changeTitle(dto);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post()
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'coverImg', maxCount: 1 },

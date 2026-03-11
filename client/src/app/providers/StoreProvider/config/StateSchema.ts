@@ -35,6 +35,10 @@ import { AdminVacanciesPageSchema } from 'pages/AdminVacanciesPage';
 import { AdminRecentEventsPageSchema } from 'pages/AdminRecentEventsPage';
 import { AboutInstitutePageSchema } from 'pages/AboutInstitutePage';
 import { MemberDetailsPageSchema } from 'pages/MemberDetailsPage';
+import { EducationPageSchema } from 'pages/EducationPage';
+import { ScienceLibraryPageSchema } from 'pages/ScienceLibraryPage';
+import { AdminEducationPageSchema } from 'pages/AdminEducationPage';
+import { AdminScienceLibraryPageSchema } from 'pages/AdminScienceLibraryPage';
 
 export interface StateSchema {
     ui: UISchema;
@@ -53,6 +57,10 @@ export interface StateSchema {
     competitionsPage?: CompetitionsPageSchema,
     vacanciesPage?: VacanciesPageSchema,
     actsPage?: ActsPageSchema,
+    educationPage?: EducationPageSchema,
+    scienceLibraryPage?: ScienceLibraryPageSchema,
+    adminEducationPage?: AdminEducationPageSchema,
+    adminScienceLibraryPage?: AdminScienceLibraryPageSchema,
     servicesPage?: ServicesPageSchema,
     cartPage?: CartPageSchema,
     adminAuthForm?: AdminAuthFormSchema,

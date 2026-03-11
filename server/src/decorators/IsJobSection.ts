@@ -20,6 +20,7 @@ export function IsJobSection(validationOptions?: ValidationOptions) {
                         || value === JobSection.DEPARTMENT_OF_MOLECULAR_GENETIC_RESEARCH
                         || value === JobSection.DEPARTMENT_OF_PROTOZOOLOGY
                         || value === JobSection.DEPARTMENT_OF_PHARMACOLOGY_AND_TOXICOLOGY
+                        || value === JobSection.DEPARTMENT_OF_MICROBIOLOGY
                         || value === JobSection.PRODUCTION_DEPARTMENT) return true;
                     return false;
                 },

@@ -31,7 +31,7 @@ import {
     ScienceDepartmentsPageReducer,
 } from '../../../model/slices/ScienceDepartmentsPageSlice';
 import {
-    getScienceDepartmentsPageInited,
+    getScienceDepartmentsPageInited, getScienceDepartmentsPageMembersMicrobiology,
     getScienceDepartmentsPageMembersMolecular,
     getScienceDepartmentsPageMembersPharmacology,
     getScienceDepartmentsPageMembersProduction,
@@ -40,6 +40,9 @@ import {
 } from '../../../model/selectors/getScienceDepartmentsPage';
 import { fetchScienceDepartmentsMembers } from '../../../model/services/fetchScienceDepartmentsMembers';
 import cls from './ScienceDepartmentsPageMobile.module.scss';
+import {
+    ScienceDepartmentsPageMicrobiologyMobile,
+} from '../ScienceDepartmentsPageMicrobiologyMobile/ScienceDepartmentsPageMicrobiologyMobile';
 
 interface ScienceDepartmentsPageMobileProps {
     className?: string;
@@ -60,6 +63,7 @@ const ScienceDepartmentsPageMobile = memo((props: ScienceDepartmentsPageMobilePr
     const membersProduction = useSelector(getScienceDepartmentsPageMembersProduction);
     const membersPharmacology = useSelector(getScienceDepartmentsPageMembersPharmacology);
     const membersMolecular = useSelector(getScienceDepartmentsPageMembersMolecular);
+    const membersMicrobiology = useSelector(getScienceDepartmentsPageMembersMicrobiology);
 
     useEffect(() => {
         if (!inited) {
@@ -114,6 +118,9 @@ const ScienceDepartmentsPageMobile = memo((props: ScienceDepartmentsPageMobilePr
                             )}
                             {membersProtozoology && (
                                 <ScienceDepartmentsPageProtozoologyMobile />
+                            )}
+                            {membersMicrobiology && (
+                                <ScienceDepartmentsPageMicrobiologyMobile />
                             )}
                         </VStack>
                     </VStack>

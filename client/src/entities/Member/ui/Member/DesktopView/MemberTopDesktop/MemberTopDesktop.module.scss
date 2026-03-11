@@ -1,6 +1,45 @@
+
 .status,
 .jobName {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+}
+
+
+
+.trigger {
+    cursor: pointer;
+}
+
+.bioWrapper {
+    white-space: pre-wrap;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    interpolate-size: allow-keywords;
+    user-select: text;
+    margin-top: 20px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+.bio {
+    transition: all 0.5s ease;
+    padding: 20px;
+    padding-left: 40px;
+    background: var(--blue-light);
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.bioVisible {
+    .bioWrapper {
+        height: 20vh;
+    }
+
+    .arrowIcon {
+        transform: rotateX(180deg);
+    }
 }

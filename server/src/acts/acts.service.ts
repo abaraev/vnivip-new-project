@@ -9,6 +9,8 @@ import {actTypes} from "./types/actTypes";
 import {Op, or, Sequelize} from "sequelize";
 import {CreateActOrderDto} from "./dto/create-act-order.dto";
 import {CreateActCompetitionDto} from "./dto/create-act-competition.dto";
+import {CreateActEducationDto} from "./dto/create-act-education.dto";
+import {CreateActLibraryDto} from "./dto/create-act-library.dto";
 
 @Injectable()
 export class ActsService {
@@ -72,6 +74,44 @@ export class ActsService {
         return act;
     }
 
+    async createForEducation(dto: CreateActEducationDto, files: { staticFile?: Express.Multer.File[] }) {
+        const staticFile = files?.staticFile?.[0];
+
+        if (!staticFile) {
+            throw new HttpException('staticFile is required', HttpStatus.BAD_REQUEST)
+        }
+
+        const savedFile: CreateDocumentResult = await this.fileService.createDocument(staticFile);
+
+        const act = await this.actsRepository.create({
+            name: savedFile.name,
+            staticFile: savedFile.staticPath,
+            size: savedFile.size,
+            type: actTypes.EDUCATION,
+        })
+
+        return act;
+    }
+
+    async createForLibrary(dto: CreateActLibraryDto, files: { staticFile?: Express.Multer.File[] }) {
+        const staticFile = files?.staticFile?.[0];
+
+        if (!staticFile) {
+            throw new HttpException('staticFile is required', HttpStatus.BAD_REQUEST)
+        }
+
+        const savedFile: CreateDocumentResult = await this.fileService.createDocument(staticFile);
+
+        const act = await this.actsRepository.create({
+            name: savedFile.name,
+            staticFile: savedFile.staticPath,
+            size: savedFile.size,
+            type: actTypes.LIBRARY,
+        })
+
+        return act;
+    }
+
     async getAll() {
         return this.actsRepository.findAll({
             order: [
@@ -81,6 +121,24 @@ export class ActsService {
                 { type: null },
                 { type: actTypes.CONTENT }
             )
+        });
+    }
+
+    async getForLibrary() {
+        return this.actsRepository.findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            where: { type: actTypes.LIBRARY }
+        });
+    }
+
+    async getForEducation() {
+        return this.actsRepository.findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            where: { type: actTypes.EDUCATION }
         });
     }
 

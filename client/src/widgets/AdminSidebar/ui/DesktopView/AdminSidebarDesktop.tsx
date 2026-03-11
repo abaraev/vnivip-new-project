@@ -97,6 +97,20 @@ export const AdminSidebarDesktop = memo((props: AdminSidebarDesktopProps) => {
                 >
                     {t('Недавние события')}
                 </AppLinkDesktop>
+                <AppLinkDesktop
+                    to={RoutePath.admin_education}
+                    theme={AppLinkDesktopTheme.WHITE2}
+                    className={classNames(cls.link, { [cls.currentSection]: pathname.includes(RoutePath.admin_education) }, [])}
+                >
+                    {t('Образование')}
+                </AppLinkDesktop>
+                <AppLinkDesktop
+                    to={RoutePath.admin_library}
+                    theme={AppLinkDesktopTheme.WHITE2}
+                    className={classNames(cls.link, { [cls.currentSection]: pathname.includes(RoutePath.admin_library) }, [])}
+                >
+                    {t('Научная библиотека')}
+                </AppLinkDesktop>
             </VStack>
         </VStack>
     );

@@ -144,4 +144,15 @@ export class OrdersService {
 
         return order;
     }
+
+
+    async deleteAll() {
+        const orders = await this.orderRepository.findAll();
+
+        const deletedOrders = orders.map(async (order) => {
+            await order.destroy();
+        })
+
+        return deletedOrders;
+    }
 }

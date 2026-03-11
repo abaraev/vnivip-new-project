@@ -7,6 +7,8 @@ import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {DeleteActDto} from "./dto/delete-act.dto";
 import {CreateActOrderDto} from "./dto/create-act-order.dto";
 import {CreateActCompetitionDto} from "./dto/create-act-competition.dto";
+import {CreateActEducationDto} from "./dto/create-act-education.dto";
+import {CreateActLibraryDto} from "./dto/create-act-library.dto";
 
 @Controller('acts')
 export class ActsController {
@@ -55,6 +57,34 @@ export class ActsController {
         return this.actsService.createForCompetition(dto, files);
     }
 
+    @Post('education')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'staticFile', maxCount: 1 },
+    ]))
+    createForEducation(@Body() dto: CreateActEducationDto,
+                         @UploadedFiles(
+                             new DocumentValidationPipe({
+                                 maxSize: 50,
+                                 fieldName: 'staticFile',
+                             }),
+                         ) files: { staticFile?: Express.Multer.File[] }) {
+        return this.actsService.createForEducation(dto, files);
+    }
+
+    @Post('library')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'staticFile', maxCount: 1 },
+    ]))
+    createForLibrary(@Body() dto: CreateActLibraryDto,
+                       @UploadedFiles(
+                           new DocumentValidationPipe({
+                               maxSize: 50,
+                               fieldName: 'staticFile',
+                           }),
+                       ) files: { staticFile?: Express.Multer.File[] }) {
+        return this.actsService.createForLibrary(dto, files);
+    }
+
     @UseGuards(JwtAuthGuard)
     @Delete()
     delete(@Query() dto: DeleteActDto) {
@@ -69,5 +99,15 @@ export class ActsController {
     @Get()
     getAll() {
         return this.actsService.getAll();
+    }
+
+    @Get('library')
+    getForLibrary() {
+        return this.actsService.getForLibrary();
+    }
+
+    @Get('education')
+    getForEducation() {
+        return this.actsService.getForEducation();
     }
 }

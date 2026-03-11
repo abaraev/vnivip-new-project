@@ -34,21 +34,29 @@ export const AdminMemberSmallTopDesktop = memo((props: AdminMemberSmallTopDeskto
             <VStack
                 gap={10}
             >
+                <Text
+                    theme={TextTheme.DARK2}
+                    size={TextSize.BODY_DESKTOP}
+                >
+                    {data.fullName}
+                </Text>
                 {data.jobName && (
                     <Text
-                        theme={TextTheme.DARK2}
-                        size={TextSize.BODY_DESKTOP}
+                        theme={TextTheme.GREY3}
+                        size={TextSize.BODY_S_DESKTOP}
                         className={cls.jobName}
                     >
                         {data.jobName}
                     </Text>
                 )}
-                <Text
-                    theme={TextTheme.GREY3}
-                    size={TextSize.BODY_S_DESKTOP}
-                >
-                    {data.fullName}
-                </Text>
+                {data.status && (
+                    <Text
+                        theme={TextTheme.BLUE}
+                        size={TextSize.BODY_S_DESKTOP}
+                    >
+                        {data.status}
+                    </Text>
+                )}
             </VStack>
         </HStack>
     );

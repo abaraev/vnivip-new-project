@@ -47,6 +47,9 @@ import {
     getAdminMembersPageInited,
 } from '../../../model/selectors/getAdminMembersPage';
 import cls from './AdminMembersPageDesktop.module.scss';
+import {
+    AdminMembersPageMicrobiologyDesktop,
+} from '../AdminMembersPageMicrobiologyDesktop/AdminMembersPageMicrobiologyDesktop';
 
 interface AdminMembersPageDesktopProps {
     className?: string;
@@ -100,6 +103,7 @@ const AdminMembersPageDesktop = memo((props: AdminMembersPageDesktopProps) => {
         { value: MemberSections.DEPARTMENT_OF_PHARMACOLOGY_AND_TOXICOLOGY, content: 'Отдел фармакологии и токсикологии' },
         { value: MemberSections.DEPARTMENT_OF_PROTOZOOLOGY, content: 'Отдел протозоологии' },
         { value: MemberSections.DEPARTMENT_OF_VIROLOGY, content: 'Отдел вирусологии' },
+        { value: MemberSections.DEPARTMENT_OF_MICROBIOLOGY, content: 'Отдел микробиологии' },
         { value: MemberSections.PRODUCTION_DEPARTMENT, content: 'Производственный отдел' },
         { value: MemberSections.ACADEMIC_COUNCIL, content: 'Ученый совет' },
         { value: MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS, content: 'Совет молодых ученых' },
@@ -180,6 +184,7 @@ const AdminMembersPageDesktop = memo((props: AdminMembersPageDesktopProps) => {
                     <AdminMembersPageGeneticResearchDesktop />
                     <AdminMembersPageToxicologyDesktop />
                     <AdminMembersPageProtozoologyDesktop />
+                    <AdminMembersPageMicrobiologyDesktop />
                 </VStack>
             </VStack>
         </DynamicModuleLoader>

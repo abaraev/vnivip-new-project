@@ -7,6 +7,7 @@ export interface AdminMembersPageSchema {
     membersAcademicCouncil: Member[];
     membersYoungScientists: Member[];
     membersVirology: Member[];
+    membersMicrobiology: Member[];
     membersGeneticResearch: Member[];
     membersProtozoology: Member[];
     membersToxicology: Member[];

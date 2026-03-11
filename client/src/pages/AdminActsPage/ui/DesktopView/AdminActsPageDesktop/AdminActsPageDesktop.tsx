@@ -43,7 +43,7 @@ const AdminActsPageDesktop = memo((props: AdminActsPageDesktopProps) => {
     }, [dispatch, inited]);
 
     const onAddAct = useCallback(async (file: File) => {
-        if (file.size < 50 * 1000) {
+        if (file.size < 50 * 1024 * 1024) {
             const result = await dispatch(fetchAddAct({ file }));
             if (result.meta.requestStatus === 'fulfilled') {
                 bindAddActModal.onCloseModal();

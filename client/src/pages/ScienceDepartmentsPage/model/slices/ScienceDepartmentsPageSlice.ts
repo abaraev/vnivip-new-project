@@ -7,6 +7,7 @@ const initialState: ScienceDepartmentsPageSchema = {
     isLoading: false,
     error: undefined,
     membersVirology: [],
+    membersMicrobiology: [],
     membersMolecular: [],
     membersProduction: [],
     membersPharmacology: [],
@@ -36,6 +37,8 @@ export const ScienceDepartmentsPageSlice = createSlice({
                         state.membersMolecular.push(member);
                     } else if (member.section === MemberSections.DEPARTMENT_OF_VIROLOGY) {
                         state.membersVirology.push(member);
+                    } else if (member.section === MemberSections.DEPARTMENT_OF_MICROBIOLOGY) {
+                        state.membersMicrobiology.push(member);
                     } else if (member.section === MemberSections.DEPARTMENT_OF_PROTOZOOLOGY) {
                         state.membersProtozoology.push(member);
                     } else if (member.section === MemberSections.DEPARTMENT_OF_PHARMACOLOGY_AND_TOXICOLOGY) {

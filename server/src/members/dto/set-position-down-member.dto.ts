@@ -17,6 +17,7 @@ export class SetPositionDownMemberDto {
             'DEPARTMENT_OF_MOLECULAR_GENETIC_RESEARCH,' +
             'DEPARTMENT_OF_PROTOZOOLOGY,' +
             'DEPARTMENT_OF_PHARMACOLOGY_AND_TOXICOLOGY,' +
+            'DEPARTMENT_OF_MICROBIOLOGY,' +
             'PRODUCTION_DEPARTMENT'})
     readonly section: string;
 }

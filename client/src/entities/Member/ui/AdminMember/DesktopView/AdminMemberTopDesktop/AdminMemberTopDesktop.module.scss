@@ -1,0 +1,35 @@
+.trigger {
+    cursor: pointer;
+}
+
+.bioWrapper {
+    white-space: pre-wrap;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    interpolate-size: allow-keywords;
+    user-select: text;
+    margin-top: 10px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+.bio {
+    transition: all 0.5s ease;
+    padding: 10px;
+    padding-left: 20px;
+    background: var(--blue-light);
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.bioVisible {
+    .bioWrapper {
+        height: 70px;
+    }
+
+    .arrowIcon {
+        transform: rotateX(180deg);
+    }
+}

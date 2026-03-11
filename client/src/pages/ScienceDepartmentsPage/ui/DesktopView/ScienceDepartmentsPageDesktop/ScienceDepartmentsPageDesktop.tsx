@@ -30,16 +30,12 @@ import {
     ScienceDepartmentsPageActions,
     ScienceDepartmentsPageReducer,
 } from '../../../model/slices/ScienceDepartmentsPageSlice';
-import {
-    getScienceDepartmentsPageInited,
-    getScienceDepartmentsPageMembersMolecular,
-    getScienceDepartmentsPageMembersPharmacology,
-    getScienceDepartmentsPageMembersProduction,
-    getScienceDepartmentsPageMembersProtozoology,
-    getScienceDepartmentsPageMembersVirology,
-} from '../../../model/selectors/getScienceDepartmentsPage';
+import { getScienceDepartmentsPageInited } from '../../../model/selectors/getScienceDepartmentsPage';
 import { fetchScienceDepartmentsMembers } from '../../../model/services/fetchScienceDepartmentsMembers';
 import cls from './ScienceDepartmentsPageDesktop.module.scss';
+import {
+    ScienceDepartmentsPageMicrobiologyDesktop,
+} from '../ScienceDepartmentsPageMicrobiologyDesktop/ScienceDepartmentsPageMicrobiologyDesktop';
 
 interface ScienceDepartmentsPageDesktopProps {
     className?: string;
@@ -55,11 +51,6 @@ const ScienceDepartmentsPageDesktop = memo((props: ScienceDepartmentsPageDesktop
     } = props;
     const dispatch = useAppDispatch();
     const inited = useSelector(getScienceDepartmentsPageInited);
-    const membersVirology = useSelector(getScienceDepartmentsPageMembersVirology);
-    const membersProtozoology = useSelector(getScienceDepartmentsPageMembersProtozoology);
-    const membersProduction = useSelector(getScienceDepartmentsPageMembersProduction);
-    const membersPharmacology = useSelector(getScienceDepartmentsPageMembersPharmacology);
-    const membersMolecular = useSelector(getScienceDepartmentsPageMembersMolecular);
 
     useEffect(() => {
         if (!inited) {
@@ -105,6 +96,7 @@ const ScienceDepartmentsPageDesktop = memo((props: ScienceDepartmentsPageDesktop
                             <ScienceDepartmentsPageMolecularDesktop />
                             <ScienceDepartmentsPagePharmacologyDesktop />
                             <ScienceDepartmentsPageProtozoologyDesktop />
+                            <ScienceDepartmentsPageMicrobiologyDesktop />
                         </VStack>
                     </VStack>
                 </VStack>

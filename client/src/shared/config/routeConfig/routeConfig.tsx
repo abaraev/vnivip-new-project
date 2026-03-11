@@ -36,6 +36,8 @@ import { AdminCompetitionsPageDesktop } from 'pages/AdminCompetitionsPage';
 import { AdminVacanciesPageDesktop } from 'pages/AdminVacanciesPage';
 import { AdminRecentEventsPageDesktop } from 'pages/AdminRecentEventsPage';
 import { MemberDetailsPageDesktop, MemberDetailsPageMobile } from 'pages/MemberDetailsPage';
+import { AdminEducationPageDesktop } from 'pages/AdminEducationPage';
+import { AdminScienceLibraryPageDesktop } from 'pages/AdminScienceLibraryPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -77,6 +79,8 @@ export enum AppRoutes {
     ADMIN_COMPETITIONS = 'admin_competitions',
     ADMIN_VACANCIES = 'admin_vacancies',
     ADMIN_RECENT_EVENTS = 'admin_recent_events',
+    ADMIN_EDUCATION = 'admin_education',
+    ADMIN_LIBRARY = 'admin_library',
 }
 
 export enum AppPaths {
@@ -115,6 +119,8 @@ export enum AppPaths {
     ADMIN_COMPETITIONS = '/admin_competitions',
     ADMIN_VACANCIES = '/admin_vacancies',
     ADMIN_RECENT_EVENTS = '/admin_recent_events',
+    ADMIN_EDUCATION = '/admin_education',
+    ADMIN_LIBRARY = '/admin_library',
 }
 
 export const RoutePath: Record<AppRoutes, AppPaths> = {
@@ -153,6 +159,8 @@ export const RoutePath: Record<AppRoutes, AppPaths> = {
     [AppRoutes.ADMIN_COMPETITIONS]: AppPaths.ADMIN_COMPETITIONS,
     [AppRoutes.ADMIN_VACANCIES]: AppPaths.ADMIN_VACANCIES,
     [AppRoutes.ADMIN_RECENT_EVENTS]: AppPaths.ADMIN_RECENT_EVENTS,
+    [AppRoutes.ADMIN_EDUCATION]: AppPaths.ADMIN_EDUCATION,
+    [AppRoutes.ADMIN_LIBRARY]: AppPaths.ADMIN_LIBRARY,
 };
 
 export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
@@ -305,6 +313,16 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
         element: <AdminRecentEventsPageDesktop />,
         authOnly: true,
     },
+    [AppRoutes.ADMIN_EDUCATION]: {
+        path: RoutePath.admin_education,
+        element: <AdminEducationPageDesktop />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_LIBRARY]: {
+        path: RoutePath.admin_library,
+        element: <AdminScienceLibraryPageDesktop />,
+        authOnly: true,
+    },
 };
 
 export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
@@ -455,6 +473,16 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ADMIN_RECENT_EVENTS]: {
         path: RoutePath.admin_recent_events,
         element: <AdminRecentEventsPageDesktop />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_EDUCATION]: {
+        path: RoutePath.admin_education,
+        element: <AdminEducationPageDesktop />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_LIBRARY]: {
+        path: RoutePath.admin_library,
+        element: <AdminScienceLibraryPageDesktop />,
         authOnly: true,
     },
 };

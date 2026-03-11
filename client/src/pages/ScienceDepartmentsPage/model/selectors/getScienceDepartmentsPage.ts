@@ -1,6 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 
 export const getScienceDepartmentsPageMembersVirology = (state: StateSchema) => state.scienceDepartmentsPage?.membersVirology;
+export const getScienceDepartmentsPageMembersMicrobiology = (state: StateSchema) => state.scienceDepartmentsPage?.membersMicrobiology;
 export const getScienceDepartmentsPageMembersPharmacology = (state: StateSchema) => state.scienceDepartmentsPage?.membersPharmacology;
 export const getScienceDepartmentsPageMembersProtozoology = (state: StateSchema) => state.scienceDepartmentsPage?.membersProtozoology;
 export const getScienceDepartmentsPageMembersMolecular = (state: StateSchema) => state.scienceDepartmentsPage?.membersMolecular;

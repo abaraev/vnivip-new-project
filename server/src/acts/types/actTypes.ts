@@ -2,4 +2,6 @@ export enum actTypes {
     CONTENT = 'CONTENT',
     ORDER = 'ORDER',
     COMPETITION = 'COMPETITION',
+    LIBRARY = 'LIBRARY',
+    EDUCATION = 'EDUCATION',
 }

@@ -65,21 +65,6 @@ export const MemberSmallBottomDesktop = memo((props: MemberSmallBottomDesktopPro
                     </Text>
                 </VStack>
             )}
-            {data.status && (
-                <HStack
-                    maxW
-                    justify="end"
-                    paddingT={20}
-                >
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.BODY_S_DESKTOP}
-                        align={TextAlign.RIGHT}
-                    >
-                        {data.status}
-                    </Text>
-                </HStack>
-            )}
             <HStack
                 justify="end"
                 maxW

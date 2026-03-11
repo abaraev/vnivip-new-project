@@ -1,0 +1,9 @@
+.member {
+    width: calc((100% - 50px) / 2) !important;
+}
+
+@media (max-width: 1200px) {
+    .member {
+        width: 100% !important;
+    }
+}

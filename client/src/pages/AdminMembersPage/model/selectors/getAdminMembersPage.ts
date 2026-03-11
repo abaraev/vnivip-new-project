@@ -4,6 +4,7 @@ export const getAdminMembersPageMembersAdministration = (state: StateSchema) => 
 export const getAdminMembersPageMembersAcademicCouncil = (state: StateSchema) => state.adminMembersPage?.membersAcademicCouncil;
 export const getAdminMembersPageMembersYoungScientists = (state: StateSchema) => state.adminMembersPage?.membersYoungScientists;
 export const getAdminMembersPageMembersVirology = (state: StateSchema) => state.adminMembersPage?.membersVirology;
+export const getAdminMembersPageMembersMicrobiology = (state: StateSchema) => state.adminMembersPage?.membersMicrobiology;
 export const getAdminMembersPageMembersGeneticResearch = (state: StateSchema) => state.adminMembersPage?.membersGeneticResearch;
 export const getAdminMembersPageMembersProtozoology = (state: StateSchema) => state.adminMembersPage?.membersProtozoology;
 export const getAdminMembersPageMembersToxicology = (state: StateSchema) => state.adminMembersPage?.membersToxicology;

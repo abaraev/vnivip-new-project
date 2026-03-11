@@ -4,6 +4,7 @@ export interface ScienceDepartmentsPageSchema {
     isLoading: boolean;
     error?: string;
     membersVirology: Member[];
+    membersMicrobiology: Member[];
     membersMolecular: Member[];
     membersProtozoology: Member[];
     membersPharmacology: Member[];

@@ -65,17 +65,6 @@ export const MemberBottomDesktop = memo((props: MemberBottomDesktopProps) => {
                     </HStack>
                 )}
             </VStack>
-            <HStack
-                justify="end"
-                maxW
-            >
-                <ButtonDesktop
-                    theme={ButtonDesktopTheme.PRIMARY}
-                    onClick={() => navigate(`/member_details/${data.id}`)}
-                >
-                    {t('О сотруднике')}
-                </ButtonDesktop>
-            </HStack>
         </VStack>
     );
 });

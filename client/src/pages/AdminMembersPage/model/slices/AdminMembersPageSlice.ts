@@ -15,6 +15,7 @@ const initialState: AdminMembersPageSchema = {
     membersProtozoology: [],
     membersToxicology: [],
     membersVirology: [],
+    membersMicrobiology: [],
     membersYoungScientists: [],
     membersAcademicCouncil: [],
     membersProductionDepartment: [],
@@ -66,6 +67,10 @@ export const AdminMembersPageSlice = createSlice({
                         state.membersVirology.push(member);
                         break;
                     }
+                    case MemberSections.DEPARTMENT_OF_MICROBIOLOGY: {
+                        state.membersMicrobiology.push(member);
+                        break;
+                    }
                     case MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS: {
                         state.membersYoungScientists.push(member);
                         break;
@@ -86,6 +91,7 @@ export const AdminMembersPageSlice = createSlice({
                 state.membersProtozoology.sort((a, b) => a.position - b.position);
                 state.membersToxicology.sort((a, b) => a.position - b.position);
                 state.membersVirology.sort((a, b) => a.position - b.position);
+                state.membersMicrobiology.sort((a, b) => a.position - b.position);
                 state.membersYoungScientists.sort((a, b) => a.position - b.position);
                 state.membersAcademicCouncil.sort((a, b) => a.position - b.position);
                 state.membersProductionDepartment.sort((a, b) => a.position - b.position);
@@ -118,6 +124,10 @@ export const AdminMembersPageSlice = createSlice({
                 }
                 case MemberSections.DEPARTMENT_OF_VIROLOGY: {
                     state.membersVirology.push(newMember);
+                    break;
+                }
+                case MemberSections.DEPARTMENT_OF_MICROBIOLOGY: {
+                    state.membersMicrobiology.push(newMember);
                     break;
                 }
                 case MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS: {
@@ -172,6 +182,13 @@ export const AdminMembersPageSlice = createSlice({
                     replaceableMember.position += 1;
                     state.membersVirology[action.payload.memberIndex - 1] = action.payload.member;
                     state.membersVirology[action.payload.memberIndex] = replaceableMember;
+                    break;
+                }
+                case MemberSections.DEPARTMENT_OF_MICROBIOLOGY: {
+                    const replaceableMember = state.membersMicrobiology[action.payload.memberIndex - 1];
+                    replaceableMember.position += 1;
+                    state.membersMicrobiology[action.payload.memberIndex - 1] = action.payload.member;
+                    state.membersMicrobiology[action.payload.memberIndex] = replaceableMember;
                     break;
                 }
                 case MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS: {
@@ -234,6 +251,13 @@ export const AdminMembersPageSlice = createSlice({
                     state.membersVirology[action.payload.memberIndex] = replaceableMember;
                     break;
                 }
+                case MemberSections.DEPARTMENT_OF_MICROBIOLOGY: {
+                    const replaceableMember = state.membersMicrobiology[action.payload.memberIndex + 1];
+                    replaceableMember.position -= 1;
+                    state.membersMicrobiology[action.payload.memberIndex + 1] = action.payload.member;
+                    state.membersMicrobiology[action.payload.memberIndex] = replaceableMember;
+                    break;
+                }
                 case MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS: {
                     const replaceableMember = state.membersYoungScientists[action.payload.memberIndex + 1];
                     replaceableMember.position -= 1;
@@ -277,6 +301,10 @@ export const AdminMembersPageSlice = createSlice({
                 }
                 case MemberSections.DEPARTMENT_OF_VIROLOGY: {
                     state.membersVirology = action.payload.members;
+                    break;
+                }
+                case MemberSections.DEPARTMENT_OF_MICROBIOLOGY: {
+                    state.membersMicrobiology = action.payload.members;
                     break;
                 }
                 case MemberSections.COUNCIL_OF_YOUNG_SCIENTISTS: {

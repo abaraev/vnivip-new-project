@@ -35,7 +35,7 @@ export const FooterLeftDesktop = memo((props: FooterLeftDesktopProps) => {
                 size={TextSize.BODY_S_DESKTOP}
                 align={TextAlign.CENTER}
             >
-                {t('Права защищены')}
+                {t('Права защищены', { year: new Date().getFullYear() })}
             </Text>
         </VStack>
     );
