@@ -56,7 +56,7 @@ export const FooterMobile = memo((props: FooterMobileProps) => {
                 align={TextAlign.CENTER}
                 className={cls.rights}
             >
-                {t('Права защищены')}
+                {t('Права защищены', { year: new Date().getFullYear() })}
             </Text>
         </VStack>
     );
