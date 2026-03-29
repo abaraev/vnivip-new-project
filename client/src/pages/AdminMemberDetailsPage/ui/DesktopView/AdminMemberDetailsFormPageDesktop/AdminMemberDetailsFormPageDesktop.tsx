@@ -78,7 +78,7 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
     }, [debouncedFetchChangeFullName, dispatch]);
 
     const onChangeBio = useCallback((value: string) => {
-        if (value.length < 1024) {
+        if (value.length < 4096) {
             dispatch(AdminMemberDetailsPageActions.setBio(value));
             debouncedFetchChangeBio(value);
         }
@@ -134,7 +134,7 @@ export const AdminMemberDetailsFormPageDesktop = memo((props: AdminMemberDetails
 
     return (
         <VStack
-            className={classNames(cls.AdminMemberDetailsFormPageDesktop, {}, [className])}
+            className={classNames(cls.AdminMemberDetailsFormPageDesktop, { [cls.roundedAvatar]: member.section !== MemberSections.ADMINISTRATION }, [className])}
             maxW
             gap={50}
         >

@@ -1,8 +1,61 @@
 .MemberSmallDesktop {
     width: 100%;
-    height: 60vh;
     min-height: 405px;
     background: var(--white2);
     border-radius: 10px;
     box-shadow: 0 0 4px -2px var(--black);
+}
+
+.image {
+    width: 250px !important;
+    height: 250px !important;
+    box-shadow: 0 0 1px 1px var(--black);
+    border-radius: 9999px;
+    background: white;
+}
+
+.jobName {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.textWrapper {
+    flex-grow: 1;
+}
+
+
+
+
+.trigger {
+    cursor: pointer;
+}
+
+.bioWrapper {
+    height: 0;
+    transition: all 0.5s ease;
+    interpolate-size: allow-keywords;
+    user-select: text;
+    overflow: hidden;
+}
+.bio {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    transition: all 0.5s ease;
+}
+
+.arrowIcon {
+    transition: all 0.5s ease;
+}
+
+.bioVisible {
+    .bioWrapper {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .arrowIcon {
+        transform: rotateX(180deg);
+    }
 }

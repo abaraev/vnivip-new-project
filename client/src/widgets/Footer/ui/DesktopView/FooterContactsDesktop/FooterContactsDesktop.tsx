@@ -47,7 +47,7 @@ export const FooterContactsDesktop = memo((props: FooterContactsDesktopProps) =>
                         size={TextSize.BODY_S_DESKTOP}
                         className={cls.contact}
                     >
-                        +8 (812) 372-54-84
+                        +7 (812) 372-54-84
                     </Text>
                 </VStack>
                 <VStack

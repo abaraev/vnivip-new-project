@@ -1,9 +1,11 @@
 .member {
-    width: calc((100% - 50px) / 2) !important;
+    width: 100% !important;
 }
 
-@media (max-width: 1200px) {
-    .member {
-        width: 100% !important;
-    }
+
+.titleSpoiler {
+    background: var(--white4);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid var(--black);
 }

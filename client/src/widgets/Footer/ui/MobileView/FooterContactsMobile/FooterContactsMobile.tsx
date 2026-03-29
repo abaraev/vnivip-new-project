@@ -48,7 +48,7 @@ export const FooterContactsMobile = memo((props: FooterContactsMobileProps) => {
                         size={TextSize.BODY_MOBILE}
                         className={cls.contact}
                     >
-                        +8 (812) 372-54-84
+                        +7 (812) 372-54-84
                     </Text>
                 </VStack>
                 <VStack

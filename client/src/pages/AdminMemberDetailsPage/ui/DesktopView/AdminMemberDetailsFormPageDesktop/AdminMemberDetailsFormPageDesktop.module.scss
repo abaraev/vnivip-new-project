@@ -18,6 +18,17 @@
     border-radius: 10px;
 }
 
+.roundedAvatar {
+    .avatar {
+        min-width: 350px;
+        min-height: 350px;
+        border-radius: 9999px;
+    }
+    .avatar::after {
+        border-radius: 9999px;
+    }
+}
+
 .avatarInput {
     position: absolute;
     left: 50%;

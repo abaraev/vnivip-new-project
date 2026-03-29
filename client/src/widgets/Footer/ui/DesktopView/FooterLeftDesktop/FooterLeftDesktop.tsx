@@ -6,7 +6,7 @@ import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from 'shared/ui/Text/Text';
-import mainLogoIcon from 'shared/assets/icons/main-logo.svg';
+import mainLogoMediumIcon from 'shared/assets/icons/main-logo-medium.svg';
 import cls from './FooterLeftDesktop.module.scss';
 
 interface FooterLeftDesktopProps {
@@ -27,7 +27,7 @@ export const FooterLeftDesktop = memo((props: FooterLeftDesktopProps) => {
             paddingR={10}
         >
             <Icon
-                Svg={mainLogoIcon}
+                Svg={mainLogoMediumIcon}
                 theme={IconTheme.CLEAN}
             />
             <Text

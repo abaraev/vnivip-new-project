@@ -85,7 +85,7 @@ export const AdminMemberTopDesktop = memo((props: AdminMemberTopDesktopProps) =>
                     >
                         <Text
                             theme={TextTheme.DARK}
-                            size={TextSize.BODY_S_DESKTOP}
+                            size={TextSize.BODY_MINI_DESKTOP}
                             align={TextAlign.JUSTIFY}
                             className={cls.bio}
                         >

@@ -89,7 +89,7 @@ export const MemberTopDesktop = memo((props: MemberTopDesktopProps) => {
                     >
                         <Text
                             theme={TextTheme.DARK}
-                            size={TextSize.BODY_DESKTOP}
+                            size={TextSize.BODY_XS_DESKTOP}
                             align={TextAlign.JUSTIFY}
                             className={cls.bio}
                         >

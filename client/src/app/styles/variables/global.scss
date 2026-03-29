@@ -109,6 +109,11 @@
     --font-line-body-s-medium-desktop: 18.7px;
     --font-body-s-medium-desktop: 600 var(--font-size-body-s-medium-desktop) / var(--font-line-body-s-medium-desktop) var(--font-family-main);
 
+    // BodyXS
+    --font-size-body-xs-desktop: 15px;
+    --font-line-body-xs-desktop: 16.5px;
+    --font-body-xs-desktop: 500 var(--font-size-body-xs-desktop) / var(--font-line-body-xs-desktop) var(--font-family-main);
+
     // Body-MINI
     --font-size-body-mini-desktop: 14px;
     --font-line-body-mini-desktop: 15.4px;
@@ -229,7 +234,7 @@
     // -------------------------------- OTHERS -------------------------------------------------
 
     // Размеры
-    --header-desktop-height: 115px;
+    --header-desktop-height: 90px;
     --header-mobile-height: 70px;
 
     // z - Индексы

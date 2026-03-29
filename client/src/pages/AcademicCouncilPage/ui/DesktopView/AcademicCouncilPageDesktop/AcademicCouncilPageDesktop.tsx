@@ -75,10 +75,9 @@ const AcademicCouncilPageDesktop = memo((props: AcademicCouncilPageDesktopProps)
                     >
                         <AcademicCouncilPageTitleDesktop />
                         {!!members?.length && (
-                            <HStack
+                            <VStack
                                 maxW
                                 gap={50}
-                                wrap="wrap"
                             >
                                 {members.map((item, index) => (
                                     <MemberSmallDesktop
@@ -87,7 +86,7 @@ const AcademicCouncilPageDesktop = memo((props: AcademicCouncilPageDesktopProps)
                                         className={cls.member}
                                     />
                                 ))}
-                            </HStack>
+                            </VStack>
                         )}
                     </VStack>
                 </VStack>

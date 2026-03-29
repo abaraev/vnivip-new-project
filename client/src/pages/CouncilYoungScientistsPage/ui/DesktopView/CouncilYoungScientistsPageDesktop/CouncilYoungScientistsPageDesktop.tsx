@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useEffect } from 'react';
 import { Page } from 'widgets/Page';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { VStack } from 'shared/ui/Stack';
 import { CoverDesktop, CoverDesktopSize } from 'shared/ui/Cover/DesktopView/CoverDesktop';
 import books1Img from 'shared/assets/images/books1.webp';
 import books2Img from 'shared/assets/images/books2.webp';
@@ -75,10 +75,9 @@ const CouncilYoungScientistsPageDesktop = memo((props: CouncilYoungScientistsPag
                     >
                         <CouncilYoungScientistsPageTitleDesktop />
                         {!!members?.length && (
-                            <HStack
+                            <VStack
                                 maxW
                                 gap={50}
-                                wrap="wrap"
                             >
                                 {members.map((item, index) => (
                                     <MemberSmallDesktop
@@ -87,7 +86,7 @@ const CouncilYoungScientistsPageDesktop = memo((props: CouncilYoungScientistsPag
                                         className={cls.member}
                                     />
                                 ))}
-                            </HStack>
+                            </VStack>
                         )}
                     </VStack>
                 </VStack>

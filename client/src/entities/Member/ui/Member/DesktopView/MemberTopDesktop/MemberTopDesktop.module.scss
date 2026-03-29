@@ -13,21 +13,22 @@
 }
 
 .bioWrapper {
-    white-space: pre-wrap;
-    overflow: hidden;
     height: 0;
     transition: all 0.5s ease;
     interpolate-size: allow-keywords;
     user-select: text;
     margin-top: 20px;
-    overflow-y: auto;
     border-radius: 10px;
+    background: var(--blue-light);
 }
 .bio {
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     transition: all 0.5s ease;
-    padding: 20px;
-    padding-left: 40px;
-    background: var(--blue-light);
+    padding-left: 20px;
+    overflow-y: auto;
+    border-radius: 10px;
 }
 
 .arrowIcon {
@@ -36,7 +37,15 @@
 
 .bioVisible {
     .bioWrapper {
-        height: 20vh;
+        height: 25vh;
+        padding: 10px;
+    }
+
+    .bio {
+
+        border: 1px solid var(--grey);
+        border-right: none;
+        padding: 10px;
     }
 
     .arrowIcon {

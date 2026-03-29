@@ -9,6 +9,6 @@ export class ChangeBioMemberDto {
 
     @IsNotEmpty({message: 'cannot be empty'})
     @IsString({message: 'required string'})
-    @Length(0, 1024, {message: 'required length from 0 to 1024'})
+    @Length(0, 4096, {message: 'required length from 0 to 4096'})
     readonly bio: string;
 }

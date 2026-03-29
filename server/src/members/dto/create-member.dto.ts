@@ -1,7 +1,6 @@
-import {IsEmail, IsNotEmpty, IsOptional, IsString, Length} from "class-validator";
+import {IsNotEmpty, IsOptional, IsString, Length} from "class-validator";
 import {IsUndefined} from "../../decorators/IsUndefined";
 import {IsJobSection} from "../../decorators/IsJobSection";
-import {IsIntString} from "../../decorators/IsIntString";
 
 export class CreateMemberDto {
 
@@ -19,7 +18,7 @@ export class CreateMemberDto {
     @IsOptional()
     @IsNotEmpty({message: 'cannot be empty'})
     @IsString({message: 'required string'})
-    @Length(1, 1024, {message: 'required length from 1 to 1024'})
+    @Length(1, 4096, {message: 'required length from 1 to 4096'})
     readonly bio: string;
 
     @IsOptional()

@@ -21,7 +21,7 @@ export const AdminMemberSmallTopDesktop = memo((props: AdminMemberSmallTopDeskto
     return (
         <HStack
             className={classNames(cls.AdminMemberSmallTopDesktop, {}, [className])}
-            gap={8}
+            gap={40}
             maxW
         >
             <ImageDesktop
