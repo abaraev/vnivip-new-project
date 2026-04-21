@@ -85,36 +85,36 @@ export const FooterContactsMobile = memo((props: FooterContactsMobileProps) => {
                         г.Санкт-Петербург, Ломоносов, ул. Черникова 48а
                     </Text>
                 </VStack>
-                {/* <VStack */}
-                {/*    maxW */}
-                {/* > */}
-                {/*    <Text */}
-                {/*        theme={TextTheme.GREY} */}
-                {/*        size={TextSize.BODY_MINI_MOBILE} */}
-                {/*    > */}
-                {/*        {`${t('Соцсети')}:`} */}
-                {/*    </Text> */}
-                {/*    <HStack */}
-                {/*        align="center" */}
-                {/*        gap={10} */}
-                {/*    > */}
-                {/*        <AnchorMobile */}
-                {/*            Svg={telegramIcon} */}
-                {/*            theme={AnchorMobileTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*        <AnchorMobile */}
-                {/*            Svg={vkIcon} */}
-                {/*            theme={AnchorMobileTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*        <AnchorMobile */}
-                {/*            Svg={youtubeIcon} */}
-                {/*            theme={AnchorMobileTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*    </HStack> */}
-                {/* </VStack> */}
+                <VStack
+                    maxW
+                >
+                    <Text
+                        theme={TextTheme.GREY}
+                        size={TextSize.BODY_MINI_MOBILE}
+                    >
+                        {`${t('Соцсети')}:`}
+                    </Text>
+                    <HStack
+                        align="center"
+                        gap={10}
+                    >
+                        <AnchorMobile
+                            Svg={telegramIcon}
+                            theme={AnchorMobileTheme.WHITE}
+                            href="https://t.me/vnivip_official"
+                        />
+                        <AnchorMobile
+                            Svg={vkIcon}
+                            theme={AnchorMobileTheme.WHITE}
+                            href="https://vk.com/vniivip_official"
+                        />
+                        {/* <AnchorMobile */}
+                        {/*    Svg={youtubeIcon} */}
+                        {/*    theme={AnchorMobileTheme.WHITE} */}
+                        {/*    href="#" */}
+                        {/* /> */}
+                    </HStack>
+                </VStack>
             </VStack>
         </VStack>
     );

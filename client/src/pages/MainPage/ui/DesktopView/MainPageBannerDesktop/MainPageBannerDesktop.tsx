@@ -9,6 +9,8 @@ import arrowDownIcon from 'shared/assets/icons/arrow-down-24-24-white.svg';
 import { useTranslation } from 'react-i18next';
 import { AnchorDesktop, AnchorDesktopTheme } from 'shared/ui/Anchor/DesktopView/AnchorDesktop';
 import { useMediaQuery } from 'react-responsive';
+import telegramIcon from 'shared/assets/icons/telegram-32-32-white.svg';
+import vkIcon from 'shared/assets/icons/vk-32-32-white.svg';
 import cls from './MainPageBannerDesktop.module.scss';
 
 export const MainPageBannerDesktop = memo(() => {
@@ -47,6 +49,7 @@ export const MainPageBannerDesktop = memo(() => {
                 </VStack>
                 <HStack
                     maxW
+                    justify="between"
                 >
                     <AnchorDesktop
                         href="#news"
@@ -56,26 +59,26 @@ export const MainPageBannerDesktop = memo(() => {
                     >
                         {t('К новостям')}
                     </AnchorDesktop>
-                    {/* <HStack */}
-                    {/*    gap={16} */}
-                    {/* > */}
-                    {/*    <AnchorDesktop */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorDesktopTheme.WHITE} */}
-                    {/*        Svg={telegramIcon} */}
-                    {/*    /> */}
-                    {/*    <AnchorDesktop */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorDesktopTheme.WHITE} */}
-                    {/*        Svg={vkIcon} */}
-                    {/*    /> */}
-                    {/*    <AnchorDesktop */}
-                    {/*        className={cls.youtubeIcon} */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorDesktopTheme.WHITE} */}
-                    {/*        Svg={youtubeIcon} */}
-                    {/*    /> */}
-                    {/* </HStack> */}
+                    <HStack
+                        gap={16}
+                    >
+                        <AnchorDesktop
+                            href="https://t.me/vnivip_official"
+                            theme={AnchorDesktopTheme.WHITE}
+                            Svg={telegramIcon}
+                        />
+                        <AnchorDesktop
+                            href="https://vk.com/vniivip_official"
+                            theme={AnchorDesktopTheme.WHITE}
+                            Svg={vkIcon}
+                        />
+                        {/* <AnchorDesktop */}
+                        {/*    className={cls.youtubeIcon} */}
+                        {/*    href="#" */}
+                        {/*    theme={AnchorDesktopTheme.WHITE} */}
+                        {/*    Svg={youtubeIcon} */}
+                        {/* /> */}
+                    </HStack>
                 </HStack>
             </VStack>
         </CoverDesktop>

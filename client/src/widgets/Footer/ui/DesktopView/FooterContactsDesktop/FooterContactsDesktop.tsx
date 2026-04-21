@@ -84,36 +84,36 @@ export const FooterContactsDesktop = memo((props: FooterContactsDesktopProps) =>
                         г.Санкт-Петербург, Ломоносов, ул. Черникова 48а
                     </Text>
                 </VStack>
-                {/* <VStack */}
-                {/*    maxW */}
-                {/* > */}
-                {/*    <Text */}
-                {/*        theme={TextTheme.GREY} */}
-                {/*        size={TextSize.BODY_MINI_DESKTOP} */}
-                {/*    > */}
-                {/*        {`${t('Соцсети')}:`} */}
-                {/*    </Text> */}
-                {/*    <HStack */}
-                {/*        align="center" */}
-                {/*        gap={10} */}
-                {/*    > */}
-                {/*        <AnchorDesktop */}
-                {/*            Svg={telegramIcon} */}
-                {/*            theme={AnchorDesktopTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*        <AnchorDesktop */}
-                {/*            Svg={vkIcon} */}
-                {/*            theme={AnchorDesktopTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*        <AnchorDesktop */}
-                {/*            Svg={youtubeIcon} */}
-                {/*            theme={AnchorDesktopTheme.WHITE} */}
-                {/*            href="#" */}
-                {/*        /> */}
-                {/*    </HStack> */}
-                {/* </VStack> */}
+                <VStack
+                    maxW
+                >
+                    <Text
+                        theme={TextTheme.GREY}
+                        size={TextSize.BODY_MINI_DESKTOP}
+                    >
+                        {`${t('Соцсети')}:`}
+                    </Text>
+                    <HStack
+                        align="center"
+                        gap={10}
+                    >
+                        <AnchorDesktop
+                            Svg={telegramIcon}
+                            theme={AnchorDesktopTheme.WHITE}
+                            href="https://t.me/vnivip_official"
+                        />
+                        <AnchorDesktop
+                            Svg={vkIcon}
+                            theme={AnchorDesktopTheme.WHITE}
+                            href="https://vk.com/vniivip_official"
+                        />
+                        {/* <AnchorDesktop */}
+                        {/*    Svg={youtubeIcon} */}
+                        {/*    theme={AnchorDesktopTheme.WHITE} */}
+                        {/*    href="#" */}
+                        {/* /> */}
+                    </HStack>
+                </VStack>
             </VStack>
         </VStack>
     );

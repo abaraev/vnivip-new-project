@@ -69,27 +69,27 @@ export const MainPageBannerMobile = memo((props: MainPageBannerMobileProps) => {
                     align="center"
                     gap={30}
                 >
-                    {/* <HStack */}
-                    {/*    gap={10} */}
-                    {/*    align="center" */}
-                    {/* > */}
-                    {/*    <AnchorMobile */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorMobileTheme.WHITE} */}
-                    {/*        Svg={telegramIcon} */}
-                    {/*    /> */}
-                    {/*    <AnchorMobile */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorMobileTheme.WHITE} */}
-                    {/*        Svg={vkIcon} */}
-                    {/*    /> */}
-                    {/*    <AnchorMobile */}
-                    {/*        className={cls.youtubeIcon} */}
-                    {/*        href="#" */}
-                    {/*        theme={AnchorMobileTheme.WHITE} */}
-                    {/*        Svg={youtubeIcon} */}
-                    {/*    /> */}
-                    {/* </HStack> */}
+                    <HStack
+                        gap={10}
+                        align="center"
+                    >
+                        <AnchorMobile
+                            href="https://t.me/vnivip_official"
+                            theme={AnchorMobileTheme.WHITE}
+                            Svg={telegramIcon}
+                        />
+                        <AnchorMobile
+                            href="https://vk.com/vniivip_official"
+                            theme={AnchorMobileTheme.WHITE}
+                            Svg={vkIcon}
+                        />
+                        {/* <AnchorMobile */}
+                        {/*    className={cls.youtubeIcon} */}
+                        {/*    href="#" */}
+                        {/*    theme={AnchorMobileTheme.WHITE} */}
+                        {/*    Svg={youtubeIcon} */}
+                        {/* /> */}
+                    </HStack>
                     <AnchorMobile
                         href="#news"
                         target="_self"
