@@ -88,6 +88,14 @@ export const HeaderDesktop = memo((props: HeaderDesktopProps) => {
 
     const servicesLinks: DropdownData[] = [
         {
+            path: RoutePath.engineering,
+            text: t('Инженерно-технический раздел'),
+        },
+        {
+            path: RoutePath.clinic,
+            text: t('Доклинические и клинические исследования'),
+        },
+        {
             path: RoutePath.cart,
             text: t('Корзина'),
         },

@@ -1,5 +1,6 @@
 export enum ContentCardPages {
     ABOUT_INSTITUTE = 'ABOUT_INSTITUTE',
+    ENGINEERING = 'ENGINEERING',
 }
 
 export enum ContentCardFirstElement {

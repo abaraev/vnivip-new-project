@@ -4,4 +4,5 @@ export enum actTypes {
     COMPETITION = 'COMPETITION',
     LIBRARY = 'LIBRARY',
     EDUCATION = 'EDUCATION',
+    CLINIC = 'CLINIC',
 }

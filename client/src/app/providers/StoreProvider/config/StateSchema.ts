@@ -33,12 +33,16 @@ import { AdminMemberDetailsPageSchema } from 'pages/AdminMemberDetailsPage';
 import { AdminCompetitionsPageSchema } from 'pages/AdminCompetitionsPage';
 import { AdminVacanciesPageSchema } from 'pages/AdminVacanciesPage';
 import { AdminRecentEventsPageSchema } from 'pages/AdminRecentEventsPage';
+import { AdminEngineeringPageSchema } from 'pages/AdminEngineeringPage';
 import { AboutInstitutePageSchema } from 'pages/AboutInstitutePage';
 import { MemberDetailsPageSchema } from 'pages/MemberDetailsPage';
 import { EducationPageSchema } from 'pages/EducationPage';
+import { ClinicPageSchema } from 'pages/ClinicPage';
 import { ScienceLibraryPageSchema } from 'pages/ScienceLibraryPage';
 import { AdminEducationPageSchema } from 'pages/AdminEducationPage';
 import { AdminScienceLibraryPageSchema } from 'pages/AdminScienceLibraryPage';
+import { AdminClinicPageSchema } from 'pages/AdminClinicPage';
+import { EngineeringPageSchema } from 'pages/EngineeringPage';
 
 export interface StateSchema {
     ui: UISchema;
@@ -58,6 +62,7 @@ export interface StateSchema {
     vacanciesPage?: VacanciesPageSchema,
     actsPage?: ActsPageSchema,
     educationPage?: EducationPageSchema,
+    сlinicPage?: ClinicPageSchema,
     scienceLibraryPage?: ScienceLibraryPageSchema,
     adminEducationPage?: AdminEducationPageSchema,
     adminScienceLibraryPage?: AdminScienceLibraryPageSchema,
@@ -76,8 +81,11 @@ export interface StateSchema {
     adminCompetitionsPage?: AdminCompetitionsPageSchema,
     adminVacanciesPage?: AdminVacanciesPageSchema,
     adminRecentEventsPage?: AdminRecentEventsPageSchema,
+    adminEngineeringPage?: AdminEngineeringPageSchema,
+    adminClinicPage?: AdminClinicPageSchema,
     aboutInstitutePage?: AboutInstitutePageSchema,
     memberDetailsPage?: MemberDetailsPageSchema,
+    engineeringPage?: EngineeringPageSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

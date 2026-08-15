@@ -9,6 +9,7 @@ import {CreateActOrderDto} from "./dto/create-act-order.dto";
 import {CreateActCompetitionDto} from "./dto/create-act-competition.dto";
 import {CreateActEducationDto} from "./dto/create-act-education.dto";
 import {CreateActLibraryDto} from "./dto/create-act-library.dto";
+import {CreateActClinicDto} from "./dto/create-act-clinic.dto";
 
 @Controller('acts')
 export class ActsController {
@@ -43,6 +44,7 @@ export class ActsController {
         return this.actsService.createForOrder(dto, files);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post('competition')
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'staticFile', maxCount: 1 },
@@ -57,6 +59,7 @@ export class ActsController {
         return this.actsService.createForCompetition(dto, files);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post('education')
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'staticFile', maxCount: 1 },
@@ -71,6 +74,7 @@ export class ActsController {
         return this.actsService.createForEducation(dto, files);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post('library')
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'staticFile', maxCount: 1 },
@@ -83,6 +87,21 @@ export class ActsController {
                            }),
                        ) files: { staticFile?: Express.Multer.File[] }) {
         return this.actsService.createForLibrary(dto, files);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Post('clinic')
+    @UseInterceptors(FileFieldsInterceptor([
+        { name: 'staticFile', maxCount: 1 },
+    ]))
+    createForClinic(@Body() dto: CreateActClinicDto,
+                     @UploadedFiles(
+                         new DocumentValidationPipe({
+                             maxSize: 50,
+                             fieldName: 'staticFile',
+                         }),
+                     ) files: { staticFile?: Express.Multer.File[] }) {
+        return this.actsService.createForClinic(dto, files);
     }
 
     @UseGuards(JwtAuthGuard)
@@ -109,5 +128,10 @@ export class ActsController {
     @Get('education')
     getForEducation() {
         return this.actsService.getForEducation();
+    }
+
+    @Get('clinic')
+    getForClinic() {
+        return this.actsService.getForClinic();
     }
 }

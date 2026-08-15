@@ -38,6 +38,10 @@ import { AdminRecentEventsPageDesktop } from 'pages/AdminRecentEventsPage';
 import { MemberDetailsPageDesktop, MemberDetailsPageMobile } from 'pages/MemberDetailsPage';
 import { AdminEducationPageDesktop } from 'pages/AdminEducationPage';
 import { AdminScienceLibraryPageDesktop } from 'pages/AdminScienceLibraryPage';
+import { ClinicPageDesktop, ClinicPageMobile } from 'pages/ClinicPage';
+import { AdminClinicPageDesktop } from 'pages/AdminClinicPage';
+import { EngineeringPageDesktop, EngineeringPageMobile } from 'pages/EngineeringPage';
+import { AdminEngineeringPageDesktop } from 'pages/AdminEngineeringPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -55,8 +59,10 @@ export enum AppRoutes {
     SCIENCE_DEPARTMENTS = 'science_departments',
     ABOUT_INSTITUTE = 'about_institute',
     EDUCATION = 'education',
+    CLINIC = 'clinic',
     SCIENCE_LIBRARY = 'science_library',
     SCIENCE_EDUCATION_ACTIVITY = 'science_education_activity',
+    ENGINEERING = 'engineering',
     PROCUREMENT_INFO = 'procurement_info',
     COMPETITIONS = 'competitions',
     VACANCIES = 'vacancies',
@@ -79,8 +85,10 @@ export enum AppRoutes {
     ADMIN_COMPETITIONS = 'admin_competitions',
     ADMIN_VACANCIES = 'admin_vacancies',
     ADMIN_RECENT_EVENTS = 'admin_recent_events',
+    ADMIN_ENGINEERING = 'admin_engineering',
     ADMIN_EDUCATION = 'admin_education',
     ADMIN_LIBRARY = 'admin_library',
+    ADMIN_CLINIC = 'admin_clinic',
 }
 
 export enum AppPaths {
@@ -95,8 +103,10 @@ export enum AppPaths {
     SCIENCE_DEPARTMENTS = '/science_departments',
     ABOUT_INSTITUTE = '/about',
     EDUCATION = '/education',
+    CLINIC = '/clinic',
     SCIENCE_LIBRARY = '/science_library',
     SCIENCE_EDUCATION_ACTIVITY = '/science_education_activity',
+    ENGINEERING = '/engineering',
     PROCUREMENT_INFO = '/procurement_info',
     COMPETITIONS = '/competitions',
     VACANCIES = '/vacancies',
@@ -119,8 +129,10 @@ export enum AppPaths {
     ADMIN_COMPETITIONS = '/admin_competitions',
     ADMIN_VACANCIES = '/admin_vacancies',
     ADMIN_RECENT_EVENTS = '/admin_recent_events',
+    ADMIN_ENGINEERING = '/admin_engineering',
     ADMIN_EDUCATION = '/admin_education',
     ADMIN_LIBRARY = '/admin_library',
+    ADMIN_CLINIC = '/admin_clinic',
 }
 
 export const RoutePath: Record<AppRoutes, AppPaths> = {
@@ -135,8 +147,10 @@ export const RoutePath: Record<AppRoutes, AppPaths> = {
     [AppRoutes.SCIENCE_DEPARTMENTS]: AppPaths.SCIENCE_DEPARTMENTS,
     [AppRoutes.ABOUT_INSTITUTE]: AppPaths.ABOUT_INSTITUTE,
     [AppRoutes.EDUCATION]: AppPaths.EDUCATION,
+    [AppRoutes.CLINIC]: AppPaths.CLINIC,
     [AppRoutes.SCIENCE_LIBRARY]: AppPaths.SCIENCE_LIBRARY,
     [AppRoutes.SCIENCE_EDUCATION_ACTIVITY]: AppPaths.SCIENCE_EDUCATION_ACTIVITY,
+    [AppRoutes.ENGINEERING]: AppPaths.ENGINEERING,
     [AppRoutes.PROCUREMENT_INFO]: AppPaths.PROCUREMENT_INFO,
     [AppRoutes.COMPETITIONS]: AppPaths.COMPETITIONS,
     [AppRoutes.VACANCIES]: AppPaths.VACANCIES,
@@ -159,8 +173,10 @@ export const RoutePath: Record<AppRoutes, AppPaths> = {
     [AppRoutes.ADMIN_COMPETITIONS]: AppPaths.ADMIN_COMPETITIONS,
     [AppRoutes.ADMIN_VACANCIES]: AppPaths.ADMIN_VACANCIES,
     [AppRoutes.ADMIN_RECENT_EVENTS]: AppPaths.ADMIN_RECENT_EVENTS,
+    [AppRoutes.ADMIN_ENGINEERING]: AppPaths.ADMIN_ENGINEERING,
     [AppRoutes.ADMIN_EDUCATION]: AppPaths.ADMIN_EDUCATION,
     [AppRoutes.ADMIN_LIBRARY]: AppPaths.ADMIN_LIBRARY,
+    [AppRoutes.ADMIN_CLINIC]: AppPaths.ADMIN_CLINIC,
 };
 
 export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
@@ -208,6 +224,10 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.education,
         element: <EducationPageDesktop />,
     },
+    [AppRoutes.CLINIC]: {
+        path: RoutePath.clinic,
+        element: <ClinicPageDesktop />,
+    },
     [AppRoutes.SCIENCE_LIBRARY]: {
         path: RoutePath.science_library,
         element: <ScienceLibraryPageDesktop />,
@@ -215,6 +235,10 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.SCIENCE_EDUCATION_ACTIVITY]: {
         path: RoutePath.science_education_activity,
         element: <ScienceEducationActivityPageDesktop />,
+    },
+    [AppRoutes.ENGINEERING]: {
+        path: RoutePath.engineering,
+        element: <EngineeringPageDesktop />,
     },
     [AppRoutes.PROCUREMENT_INFO]: {
         path: RoutePath.procurement_info,
@@ -313,6 +337,11 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
         element: <AdminRecentEventsPageDesktop />,
         authOnly: true,
     },
+    [AppRoutes.ADMIN_ENGINEERING]: {
+        path: RoutePath.admin_engineering,
+        element: <AdminEngineeringPageDesktop />,
+        authOnly: true,
+    },
     [AppRoutes.ADMIN_EDUCATION]: {
         path: RoutePath.admin_education,
         element: <AdminEducationPageDesktop />,
@@ -321,6 +350,11 @@ export const routeConfigDesktop: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ADMIN_LIBRARY]: {
         path: RoutePath.admin_library,
         element: <AdminScienceLibraryPageDesktop />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_CLINIC]: {
+        path: RoutePath.admin_clinic,
+        element: <AdminClinicPageDesktop />,
         authOnly: true,
     },
 };
@@ -370,6 +404,10 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.education,
         element: <EducationPageMobile />,
     },
+    [AppRoutes.CLINIC]: {
+        path: RoutePath.clinic,
+        element: <ClinicPageMobile />,
+    },
     [AppRoutes.SCIENCE_LIBRARY]: {
         path: RoutePath.science_library,
         element: <ScienceLibraryPageMobile />,
@@ -377,6 +415,10 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.SCIENCE_EDUCATION_ACTIVITY]: {
         path: RoutePath.science_education_activity,
         element: <ScienceEducationActivityPageMobile />,
+    },
+    [AppRoutes.ENGINEERING]: {
+        path: RoutePath.engineering,
+        element: <EngineeringPageMobile />,
     },
     [AppRoutes.PROCUREMENT_INFO]: {
         path: RoutePath.procurement_info,
@@ -475,6 +517,11 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
         element: <AdminRecentEventsPageDesktop />,
         authOnly: true,
     },
+    [AppRoutes.ADMIN_ENGINEERING]: {
+        path: RoutePath.admin_engineering,
+        element: <AdminEngineeringPageDesktop />,
+        authOnly: true,
+    },
     [AppRoutes.ADMIN_EDUCATION]: {
         path: RoutePath.admin_education,
         element: <AdminEducationPageDesktop />,
@@ -483,6 +530,11 @@ export const routeConfigMobile: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ADMIN_LIBRARY]: {
         path: RoutePath.admin_library,
         element: <AdminScienceLibraryPageDesktop />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_CLINIC]: {
+        path: RoutePath.admin_clinic,
+        element: <AdminClinicPageDesktop />,
         authOnly: true,
     },
 };

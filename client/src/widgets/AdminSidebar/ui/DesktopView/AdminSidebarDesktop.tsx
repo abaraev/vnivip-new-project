@@ -39,7 +39,8 @@ export const AdminSidebarDesktop = memo((props: AdminSidebarDesktopProps) => {
             <VStack
                 maxW
                 align="center"
-                gap={8}
+                gap={4}
+                className={cls.linksWrapper}
             >
                 <AppLinkDesktop
                     to={RoutePath.admin_orders}
@@ -110,6 +111,20 @@ export const AdminSidebarDesktop = memo((props: AdminSidebarDesktopProps) => {
                     className={classNames(cls.link, { [cls.currentSection]: pathname.includes(RoutePath.admin_library) }, [])}
                 >
                     {t('Научная библиотека')}
+                </AppLinkDesktop>
+                <AppLinkDesktop
+                    to={RoutePath.admin_clinic}
+                    theme={AppLinkDesktopTheme.WHITE2}
+                    className={classNames(cls.link, { [cls.currentSection]: pathname.includes(RoutePath.admin_clinic) }, [])}
+                >
+                    {t('Доклинические и клинические исследования')}
+                </AppLinkDesktop>
+                <AppLinkDesktop
+                    to={RoutePath.admin_engineering}
+                    theme={AppLinkDesktopTheme.WHITE2}
+                    className={classNames(cls.link, { [cls.currentSection]: pathname.includes(RoutePath.admin_engineering) }, [])}
+                >
+                    {t('Инженерно-технический раздел')}
                 </AppLinkDesktop>
             </VStack>
         </VStack>
