@@ -16,6 +16,7 @@
   "Вакансии": "Jobs",
   "Научная и образовательная деятельность": "Scientific and educational activities",
   "Услуги": "Services",
+  "Доклинические и клинические исследования": "Preclinical and clinical studies",
   "Права защищены": "{{year}} © VNIVIP. All rights reserved",
   "Номер телефона": "Phone number",
   "Общая почта": "General mail",
@@ -27,5 +28,6 @@
   "Обязательно для заполнения": "Required field",
   "Электронная почта": "E-mail",
   "Нет изображения": "No image",
-  "О сотруднике": "About the employee"
+  "О сотруднике": "About the employee",
+  "Инженерно-технический раздел": "Engineering and technical section"
 }

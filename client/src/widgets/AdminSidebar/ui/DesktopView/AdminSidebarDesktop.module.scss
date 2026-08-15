@@ -12,11 +12,16 @@
 }
 
 .link {
-    padding: 15px;
+    padding-block: 8px;
+    padding-inline: 13px;
     border-radius: 50px;
     width: 100%;
     &:hover {
         backdrop-filter: brightness(105%);
         text-decoration: underline;
     }
+}
+
+.linksWrapper {
+    overflow: auto;
 }
